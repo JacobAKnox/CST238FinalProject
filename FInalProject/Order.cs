@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace FInalProject
 {
@@ -30,6 +31,16 @@ namespace FInalProject
             foreach (OrderStep step in order_list["1234"].steps) { 
                 this.SelectedOrder.Add(step);
             }
+
+            worklist_data.Add(new Order("2345",
+                new OrderStep("Forming", "5/11", COUNT, ""),
+                new OrderStep("Threads", "5/13", COUNT, ""),
+                new OrderStep("Heat Treatment", "5/14", COUNT, ""),
+                new OrderStep("Plating", "5/17", COUNT, ""),
+                new OrderStep("QC", "5/18", COUNT, "")
+                ));
+
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,6 +61,16 @@ namespace FInalProject
         private void makecert_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 
