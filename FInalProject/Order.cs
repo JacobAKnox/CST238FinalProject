@@ -53,8 +53,6 @@ namespace FInalProject
         }
     }
 
-    public class StepList : BindingSource { }
-
     class Order { 
         public Order(string id, params OrderStep[] steps)
         {
