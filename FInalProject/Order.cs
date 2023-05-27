@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace FInalProject
 {
     public partial class Window : Form
@@ -49,6 +51,8 @@ namespace FInalProject
 
         private void makecert_Click(object sender, EventArgs e)
         {
+            var formPopup = new E_Certs.E_Cert_Gen();
+            formPopup.Show(this); // if you need non-modal window
 
         }
     }
