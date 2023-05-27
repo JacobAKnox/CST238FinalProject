@@ -32,11 +32,6 @@ namespace FInalProject
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
@@ -50,6 +45,11 @@ namespace FInalProject
         private void update_grid() {
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = this.SelectedOrder;
+        }
+
+        private void makecert_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
