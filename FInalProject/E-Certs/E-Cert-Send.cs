@@ -16,6 +16,5 @@ namespace FInalProject.E_Certs
         {
             InitializeComponent();
         }
-
     }
 }
