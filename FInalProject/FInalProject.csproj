@@ -52,6 +52,12 @@
     <Compile Include="E-Certs\E-Cert-Gen.Designer.cs">
       <DependentUpon>E-Cert-Gen.cs</DependentUpon>
     </Compile>
+    <Compile Include="E-Certs\E-Cert-Send.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="E-Certs\E-Cert-Send.Designer.cs">
+      <DependentUpon>E-Cert-Send.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="E-Certs\E-Cert-Gen.resx">
+      <DependentUpon>E-Cert-Gen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="E-Certs\E-Cert-Send.resx">
+      <DependentUpon>E-Cert-Send.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
