@@ -33,8 +33,6 @@ namespace FInalProject.E_Certs
 
         private void b_send_ecert_Click(object sender, EventArgs e)
         {
-            const string Filename = "\\Resources\\Check Icon.bmp";
-            Window.orderWindowInstance.ecert_stats.Image = Image.FromFile(Filename);
             toClose.Close();
         }
     }
