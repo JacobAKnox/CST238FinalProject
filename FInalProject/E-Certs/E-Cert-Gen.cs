@@ -22,5 +22,10 @@ namespace FInalProject.E_Certs
             var formPopup = new E_Certs.E_Cert_Send();
             formPopup.Show(this); // if you need non-modal window
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
