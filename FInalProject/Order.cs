@@ -46,14 +46,15 @@ namespace FInalProject
             // I have to set the here becasue visual studio resets it in the desginer as a "feature"
             this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+
+            this.WorklistGrid.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WorklistGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
         }
-
         
-
         private void UpdateDataGridView2()
         {
-            dataGridView2.DataSource = null;
-            dataGridView2.DataSource = worklist_data;
+            WorklistGrid.DataSource = null;
+            WorklistGrid.DataSource = worklist_data;
         }
 
 
@@ -87,11 +88,6 @@ namespace FInalProject
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
         {
             UpdateDataGridView2();
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 
