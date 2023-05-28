@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
+
+
 namespace FInalProject
 {
     public partial class Window : Form
@@ -69,6 +71,8 @@ namespace FInalProject
 
         private void makecert_Click(object sender, EventArgs e)
         {
+            var formPopup = new E_Certs.E_Cert_Gen();
+            formPopup.Show(this); // if you need non-modal window
 
         }
 
@@ -82,8 +86,6 @@ namespace FInalProject
             UpdateDataGridView2();
         }
     }
-
-    public class StepList : BindingSource { }
 
     class Order { 
         public Order(string RMS, params OrderStep[] steps)
