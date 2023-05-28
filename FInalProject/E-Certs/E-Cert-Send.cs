@@ -13,7 +13,7 @@ namespace FinalProject.E_Certs
 {
     public partial class E_Cert_Send : Form
     {
-        // To close as things as you exit, you have to close the parent of the 
+        // To close as things as you exit, you have to close the instance that opened this instance.
         private Form toClose;
 
         public E_Cert_Send(String sendAs, Form callback)
@@ -38,20 +38,11 @@ namespace FinalProject.E_Certs
             toClose.Close();
         }
 
-        private void ecery_edit_pgroup_c_Click(object sender, EventArgs e)
-        {
-            update_email_pgroup();
-        }
-
-        private void ecery_edit_pgroup_cc_Click(object sender, EventArgs e)
-        {
-            update_email_pgroup();
-        }
-
-        private void update_email_pgroup()
+        private void ecery_edit_permanant_group_Click(object sender, EventArgs e)
         {
             var formPopup = new UpdateEmails();
             formPopup.Show(this);
         }
+
     }
 }
