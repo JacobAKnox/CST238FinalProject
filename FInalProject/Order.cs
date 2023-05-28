@@ -93,6 +93,11 @@ namespace FInalProject
         {
             UpdateDataGridView2();
         }
+
+        private void Window_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     class Order { 
