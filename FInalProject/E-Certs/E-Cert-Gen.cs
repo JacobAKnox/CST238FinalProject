@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FInalProject.E_Certs
+namespace FinalProject.E_Certs
 {
     public partial class E_Cert_Gen : Form
     {

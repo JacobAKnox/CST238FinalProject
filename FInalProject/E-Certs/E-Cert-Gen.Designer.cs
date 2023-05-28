@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace FInalProject.E_Certs
+namespace FinalProject.E_Certs
 {
     partial class E_Cert_Gen
     {

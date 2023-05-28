@@ -1,4 +1,4 @@
-﻿namespace FInalProject.E_Certs
+﻿namespace FinalProject.E_Certs
 {
     partial class E_Cert_Send
     {

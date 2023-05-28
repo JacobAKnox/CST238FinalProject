@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 
 
-namespace FInalProject
+namespace FinalProject
 {
     public partial class Window : Form
     {

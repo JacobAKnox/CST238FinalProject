@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 
-namespace FInalProject
+namespace FinalProject
 {
         partial class UpdateEmails: Form
         {

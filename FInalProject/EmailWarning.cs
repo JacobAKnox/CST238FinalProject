@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FInalProject
+namespace FinalProject
 {
     public partial class EmailWarning : Form
     {
