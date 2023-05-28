@@ -42,8 +42,10 @@ namespace FInalProject
                 new OrderStep("Plating", "5/17", COUNT, ""),
                 new OrderStep("QC", "5/18", COUNT, "")
                 ));
-            
 
+            // I have to set the here becasue visual studio resets it in the desginer as a "feature"
+            this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrderGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
         }
 
         
@@ -66,8 +68,8 @@ namespace FInalProject
         }
 
         private void update_grid() {
-            this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = this.SelectedOrder;
+            this.OrderGridView.DataSource = null;
+            this.OrderGridView.DataSource = this.SelectedOrder;
         }
 
         private void makecert_Click(object sender, EventArgs e)
