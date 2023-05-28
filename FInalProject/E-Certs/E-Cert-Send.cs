@@ -33,9 +33,25 @@ namespace FInalProject.E_Certs
 
         private void b_send_ecert_Click(object sender, EventArgs e)
         {
-            const string Filename = "\\Resources\\Check Icon.bmp";
-            Window.orderWindowInstance.ecert_stats.Image = Image.FromFile(Filename);
+            //const string Filename = "\\Resources\\Check Icon.bmp";
+            //Window.orderWindowInstance.ecert_stats.Image = Image.FromFile(Filename);
             toClose.Close();
+        }
+
+        private void ecery_edit_pgroup_c_Click(object sender, EventArgs e)
+        {
+            update_email_pgroup();
+        }
+
+        private void ecery_edit_pgroup_cc_Click(object sender, EventArgs e)
+        {
+            update_email_pgroup();
+        }
+
+        private void update_email_pgroup()
+        {
+            var formPopup = new UpdateEmails();
+            formPopup.Show(this);
         }
     }
 }
