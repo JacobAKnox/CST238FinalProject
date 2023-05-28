@@ -76,6 +76,7 @@
             this.ecery_edit_pgroup_c.TabIndex = 14;
             this.ecery_edit_pgroup_c.Text = "⚙";
             this.ecery_edit_pgroup_c.UseVisualStyleBackColor = true;
+            this.ecery_edit_pgroup_c.Click += new System.EventHandler(this.ecery_edit_pgroup_c_Click);
             // 
             // label7
             // 
@@ -116,6 +117,7 @@
             this.ecery_edit_pgroup_cc.TabIndex = 18;
             this.ecery_edit_pgroup_cc.Text = "⚙";
             this.ecery_edit_pgroup_cc.UseVisualStyleBackColor = true;
+            this.ecery_edit_pgroup_cc.Click += new System.EventHandler(this.ecery_edit_pgroup_cc_Click);
             // 
             // ecert_send_send_as
             // 
