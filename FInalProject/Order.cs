@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 
 
@@ -33,7 +34,26 @@ namespace FInalProject
             foreach (OrderStep step in order_list["1234"].steps) { 
                 this.SelectedOrder.Add(step);
             }
+
+            worklist_data.Add(new Order("2345",
+                new OrderStep("Forming", "5/11", COUNT, ""),
+                new OrderStep("Threads", "5/13", COUNT, ""),
+                new OrderStep("Heat Treatment", "5/14", COUNT, ""),
+                new OrderStep("Plating", "5/17", COUNT, ""),
+                new OrderStep("QC", "5/18", COUNT, "")
+                ));
+            
+
         }
+
+        
+
+        private void UpdateDataGridView2()
+        {
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = worklist_data;
+        }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -57,6 +77,16 @@ namespace FInalProject
 
         }
 
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateDataGridView2();
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            UpdateDataGridView2();
+        }
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -64,16 +94,24 @@ namespace FInalProject
     }
 
     class Order { 
-        public Order(string id, params OrderStep[] steps)
+        public Order(string RMS, params OrderStep[] steps)
         {
-            this.id = id;
+            this.RMS = RMS;
             foreach (OrderStep step in steps) { 
                 this.steps.Add(step);
             }
         }
 
+        public string RMS { get; set; }
+        public string Part { get; set; }
+        public string Op { get; set; }
+        public int PONumber { get; set; }
+        public string Due { get; set; }
+        public string PromiseDate { get; set; }
+        public string description { get; set; }
+        public int qtyComplete { get; set; }
 
-        public string id;
+        
         public List<OrderStep> steps = new List<OrderStep>();
     }
 
