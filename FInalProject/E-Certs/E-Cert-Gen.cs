@@ -16,5 +16,16 @@ namespace FInalProject.E_Certs
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var formPopup = new E_Certs.E_Cert_Send();
+            formPopup.Show(this); // if you need non-modal window
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
