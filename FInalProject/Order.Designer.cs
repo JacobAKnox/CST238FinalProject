@@ -1,4 +1,7 @@
-﻿namespace FInalProject
+﻿using System.Net.NetworkInformation;
+using System.Windows.Forms;
+
+namespace FInalProject
 {
     partial class Window
     {
@@ -34,6 +37,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ActiveOrdersOnly = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,14 +52,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stepnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.increment = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.completeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,7 +83,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.makecert = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.i_ecert_status_docs = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -88,20 +91,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.ActiveOrdersOnly = new System.Windows.Forms.CheckBox();
+            this.stepnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.completeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -114,9 +116,10 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.i_ecert_status_docs)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -149,6 +152,66 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(123, 111);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(97, 32);
+            this.comboBox3.TabIndex = 19;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(20, 111);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(97, 32);
+            this.comboBox2.TabIndex = 18;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(424, 113);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(83, 29);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Highlight";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(318, 115);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 29);
+            this.textBox2.TabIndex = 16;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(20, 159);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(774, 250);
+            this.webBrowser1.TabIndex = 15;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(682, 113);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(97, 32);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // ActiveOrdersOnly
+            // 
+            this.ActiveOrdersOnly.AutoSize = true;
+            this.ActiveOrdersOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActiveOrdersOnly.Location = new System.Drawing.Point(518, 115);
+            this.ActiveOrdersOnly.Name = "ActiveOrdersOnly";
+            this.ActiveOrdersOnly.Size = new System.Drawing.Size(158, 24);
+            this.ActiveOrdersOnly.TabIndex = 13;
+            this.ActiveOrdersOnly.Text = "Active Orders Only";
+            this.ActiveOrdersOnly.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -252,22 +315,6 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // stepnameDataGridViewTextBoxColumn
-            // 
-            this.stepnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stepnameDataGridViewTextBoxColumn.DataPropertyName = "step_name";
-            this.stepnameDataGridViewTextBoxColumn.HeaderText = "Operation";
-            this.stepnameDataGridViewTextBoxColumn.Name = "stepnameDataGridViewTextBoxColumn";
-            this.stepnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stepnameDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // duedateDataGridViewTextBoxColumn
-            // 
-            this.duedateDataGridViewTextBoxColumn.DataPropertyName = "due_date";
-            this.duedateDataGridViewTextBoxColumn.HeaderText = "Due";
-            this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
-            this.duedateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // increment
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -281,39 +328,6 @@
             this.increment.Text = "+";
             this.increment.UseColumnTextForButtonValue = true;
             this.increment.Width = 30;
-            // 
-            // completeDataGridViewTextBoxColumn
-            // 
-            this.completeDataGridViewTextBoxColumn.DataPropertyName = "complete";
-            this.completeDataGridViewTextBoxColumn.HeaderText = "Qty. Complete";
-            this.completeDataGridViewTextBoxColumn.Name = "completeDataGridViewTextBoxColumn";
-            this.completeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.completeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // todoDataGridViewTextBoxColumn
-            // 
-            this.todoDataGridViewTextBoxColumn.DataPropertyName = "todo";
-            this.todoDataGridViewTextBoxColumn.HeaderText = "Qty. Todo";
-            this.todoDataGridViewTextBoxColumn.Name = "todoDataGridViewTextBoxColumn";
-            this.todoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            // 
-            // SelectedOrder
-            // 
-            this.SelectedOrder.DataSource = typeof(FInalProject.OrderStep);
             // 
             // panel1
             // 
@@ -599,7 +613,7 @@
             // 
             this.panel5.Controls.Add(this.button6);
             this.panel5.Controls.Add(this.makecert);
-            this.panel5.Controls.Add(this.pictureBox5);
+            this.panel5.Controls.Add(this.i_ecert_status_docs);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(289, 108);
             this.panel5.Name = "panel5";
@@ -627,16 +641,16 @@
             this.makecert.UseVisualStyleBackColor = true;
             this.makecert.Click += new System.EventHandler(this.makecert_Click);
             // 
-            // pictureBox5
+            // i_ecert_status_docs
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(115, 3);
-            this.pictureBox5.MaximumSize = new System.Drawing.Size(32, 32);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
+            this.i_ecert_status_docs.Image = ((System.Drawing.Image)(resources.GetObject("i_ecert_status_docs.Image")));
+            this.i_ecert_status_docs.Location = new System.Drawing.Point(115, 3);
+            this.i_ecert_status_docs.MaximumSize = new System.Drawing.Size(32, 32);
+            this.i_ecert_status_docs.Name = "i_ecert_status_docs";
+            this.i_ecert_status_docs.Size = new System.Drawing.Size(32, 32);
+            this.i_ecert_status_docs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_ecert_status_docs.TabIndex = 5;
+            this.i_ecert_status_docs.TabStop = false;
             // 
             // label8
             // 
@@ -708,65 +722,54 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
-            // comboBox3
+            // stepnameDataGridViewTextBoxColumn
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(123, 111);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(97, 32);
-            this.comboBox3.TabIndex = 19;
+            this.stepnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stepnameDataGridViewTextBoxColumn.DataPropertyName = "step_name";
+            this.stepnameDataGridViewTextBoxColumn.HeaderText = "Operation";
+            this.stepnameDataGridViewTextBoxColumn.Name = "stepnameDataGridViewTextBoxColumn";
+            this.stepnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stepnameDataGridViewTextBoxColumn.Width = 118;
             // 
-            // comboBox2
+            // duedateDataGridViewTextBoxColumn
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(20, 111);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(97, 32);
-            this.comboBox2.TabIndex = 18;
+            this.duedateDataGridViewTextBoxColumn.DataPropertyName = "due_date";
+            this.duedateDataGridViewTextBoxColumn.HeaderText = "Due";
+            this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
+            this.duedateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // button7
+            // completeDataGridViewTextBoxColumn
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(424, 113);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(83, 29);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Highlight";
-            this.button7.UseVisualStyleBackColor = true;
+            this.completeDataGridViewTextBoxColumn.DataPropertyName = "complete";
+            this.completeDataGridViewTextBoxColumn.HeaderText = "Qty. Complete";
+            this.completeDataGridViewTextBoxColumn.Name = "completeDataGridViewTextBoxColumn";
+            this.completeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.completeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // textBox2
+            // todoDataGridViewTextBoxColumn
             // 
-            this.textBox2.Location = new System.Drawing.Point(318, 115);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 29);
-            this.textBox2.TabIndex = 16;
+            this.todoDataGridViewTextBoxColumn.DataPropertyName = "todo";
+            this.todoDataGridViewTextBoxColumn.HeaderText = "Qty. Todo";
+            this.todoDataGridViewTextBoxColumn.Name = "todoDataGridViewTextBoxColumn";
+            this.todoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // webBrowser1
+            // totalDataGridViewTextBoxColumn
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(20, 159);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(774, 250);
-            this.webBrowser1.TabIndex = 15;
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // comboBox1
+            // notesDataGridViewTextBoxColumn
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(682, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(97, 32);
-            this.comboBox1.TabIndex = 14;
+            this.notesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
+            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
             // 
-            // ActiveOrdersOnly
+            // SelectedOrder
             // 
-            this.ActiveOrdersOnly.AutoSize = true;
-            this.ActiveOrdersOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiveOrdersOnly.Location = new System.Drawing.Point(518, 115);
-            this.ActiveOrdersOnly.Name = "ActiveOrdersOnly";
-            this.ActiveOrdersOnly.Size = new System.Drawing.Size(158, 24);
-            this.ActiveOrdersOnly.TabIndex = 13;
-            this.ActiveOrdersOnly.Text = "Active Orders Only";
-            this.ActiveOrdersOnly.UseVisualStyleBackColor = true;
+            this.SelectedOrder.DataSource = typeof(FInalProject.OrderStep);
             // 
             // Window
             // 
@@ -784,7 +787,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -803,10 +805,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.i_ecert_status_docs)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,7 +843,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button makecert;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox i_ecert_status_docs;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button12;

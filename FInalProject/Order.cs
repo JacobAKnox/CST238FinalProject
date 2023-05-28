@@ -15,6 +15,10 @@ namespace FInalProject
     public partial class Window : Form
     {
         private Dictionary<string, Order> order_list = new Dictionary<string, Order>();
+        
+        public static Window orderWindowInstance;
+        public PictureBox ecert_stats;
+
 
         public Window()
         {
@@ -32,6 +36,10 @@ namespace FInalProject
             foreach (OrderStep step in order_list["1234"].steps) { 
                 this.SelectedOrder.Add(step);
             }
+
+            orderWindowInstance = this;
+            ecert_stats = i_ecert_status_docs;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
