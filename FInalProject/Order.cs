@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 
 
@@ -22,6 +23,7 @@ namespace FInalProject
 
         public Window()
         {
+            WindowState = FormWindowState.Maximized;
             const int COUNT = 30;
             InitializeComponent();
 
@@ -37,10 +39,28 @@ namespace FInalProject
                 this.SelectedOrder.Add(step);
             }
 
-            orderWindowInstance = this;
-            ecert_stats = i_ecert_status_docs;
+            worklist_data.Add(new Order("2345",
+                new OrderStep("Forming", "5/11", COUNT, ""),
+                new OrderStep("Threads", "5/13", COUNT, ""),
+                new OrderStep("Heat Treatment", "5/14", COUNT, ""),
+                new OrderStep("Plating", "5/17", COUNT, ""),
+                new OrderStep("QC", "5/18", COUNT, "")
+                ));
 
+            // I have to set the here becasue visual studio resets it in the desginer as a "feature"
+            this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrderGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+
+            this.WorklistGrid.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WorklistGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
         }
+        
+        private void UpdateDataGridView2()
+        {
+            WorklistGrid.DataSource = null;
+            WorklistGrid.DataSource = worklist_data;
+        }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -53,8 +73,8 @@ namespace FInalProject
         }
 
         private void update_grid() {
-            this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = this.SelectedOrder;
+            this.OrderGridView.DataSource = null;
+            this.OrderGridView.DataSource = this.SelectedOrder;
         }
 
         private void makecert_Click(object sender, EventArgs e)
@@ -63,19 +83,37 @@ namespace FInalProject
             formPopup.Show(this); // if you need non-modal window
 
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateDataGridView2();
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            UpdateDataGridView2();
+        }
     }
 
     class Order { 
-        public Order(string id, params OrderStep[] steps)
+        public Order(string RMS, params OrderStep[] steps)
         {
-            this.id = id;
+            this.RMS = RMS;
             foreach (OrderStep step in steps) { 
                 this.steps.Add(step);
             }
         }
 
+        public string RMS { get; set; }
+        public string Part { get; set; }
+        public string Op { get; set; }
+        public int PONumber { get; set; }
+        public string Due { get; set; }
+        public string PromiseDate { get; set; }
+        public string description { get; set; }
+        public int qtyComplete { get; set; }
 
-        public string id;
+        
         public List<OrderStep> steps = new List<OrderStep>();
     }
 
