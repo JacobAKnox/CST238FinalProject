@@ -39,9 +39,18 @@ namespace FInalProject
                 new OrderStep("Plating", "5/17", COUNT, ""),
                 new OrderStep("QC", "5/18", COUNT, "")
                 ));
-
             
+
         }
+
+        
+
+        private void UpdateDataGridView2()
+        {
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = worklist_data;
+        }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -65,28 +74,36 @@ namespace FInalProject
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            UpdateDataGridView2();
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
         {
-           
+            UpdateDataGridView2();
         }
     }
 
     public class StepList : BindingSource { }
 
     class Order { 
-        public Order(string id, params OrderStep[] steps)
+        public Order(string RMS, params OrderStep[] steps)
         {
-            this.id = id;
+            this.RMS = RMS;
             foreach (OrderStep step in steps) { 
                 this.steps.Add(step);
             }
         }
 
+        public string RMS { get; set; }
+        public string Part { get; set; }
+        public string Op { get; set; }
+        public int PONumber { get; set; }
+        public string Due { get; set; }
+        public string PromiseDate { get; set; }
+        public string description { get; set; }
+        public int qtyComplete { get; set; }
 
-        public string id;
+        
         public List<OrderStep> steps = new List<OrderStep>();
     }
 
