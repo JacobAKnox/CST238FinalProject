@@ -18,6 +18,7 @@ namespace FInalProject
 
         public Window()
         {
+            WindowState = FormWindowState.Maximized;
             const int COUNT = 30;
             InitializeComponent();
 
@@ -53,6 +54,11 @@ namespace FInalProject
         {
             var formPopup = new E_Certs.E_Cert_Gen();
             formPopup.Show(this); // if you need non-modal window
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
 
         }
     }
