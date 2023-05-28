@@ -1,4 +1,7 @@
-﻿namespace FInalProject
+﻿using System.Net.NetworkInformation;
+using System.Windows.Forms;
+
+namespace FInalProject
 {
     partial class Window
     {
@@ -895,7 +898,7 @@
             this.panel11.Size = new System.Drawing.Size(1536, 40);
             this.panel11.TabIndex = 23;
             // 
-            // comboBox3
+            // stepnameDataGridViewTextBoxColumn
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox3.FormattingEnabled = true;
@@ -904,7 +907,7 @@
             this.comboBox3.Size = new System.Drawing.Size(97, 32);
             this.comboBox3.TabIndex = 32;
             // 
-            // comboBox2
+            // duedateDataGridViewTextBoxColumn
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox2.FormattingEnabled = true;
@@ -913,7 +916,7 @@
             this.comboBox2.Size = new System.Drawing.Size(97, 32);
             this.comboBox2.TabIndex = 31;
             // 
-            // button7
+            // completeDataGridViewTextBoxColumn
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -924,7 +927,7 @@
             this.button7.Text = "Highlight";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // todoDataGridViewTextBoxColumn
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox2.Location = new System.Drawing.Point(686, 7);
@@ -932,7 +935,7 @@
             this.textBox2.Size = new System.Drawing.Size(100, 29);
             this.textBox2.TabIndex = 29;
             // 
-            // comboBox1
+            // notesDataGridViewTextBoxColumn
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.FormattingEnabled = true;
@@ -941,7 +944,7 @@
             this.comboBox1.Size = new System.Drawing.Size(97, 32);
             this.comboBox1.TabIndex = 28;
             // 
-            // ActiveOrdersOnly
+            // SelectedOrder
             // 
             this.ActiveOrdersOnly.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ActiveOrdersOnly.AutoSize = true;
@@ -1020,7 +1023,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button makecert;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox i_ecert_status_docs;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.BindingSource worklist_data;

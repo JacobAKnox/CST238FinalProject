@@ -16,6 +16,10 @@ namespace FInalProject
     public partial class Window : Form
     {
         private Dictionary<string, Order> order_list = new Dictionary<string, Order>();
+        
+        public static Window orderWindowInstance;
+        public PictureBox ecert_stats;
+
 
         public Window()
         {

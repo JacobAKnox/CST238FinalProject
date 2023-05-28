@@ -32,15 +32,14 @@ namespace FInalProject.E_Certs
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.po_gen_ecert = new System.Windows.Forms.CheckedListBox();
+            this.ecert_send_as_input = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ecert_make_qty = new System.Windows.Forms.NumericUpDown();
             this.b_gen_cert = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gen_ecert_progress_bar = new System.Windows.Forms.ProgressBar();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecert_make_qty)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,31 +53,35 @@ namespace FInalProject.E_Certs
             this.label1.TabIndex = 1;
             this.label1.Text = "PO:";
             // 
-            // checkedListBox1
+            // po_gen_ecert
             // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(99, 5);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(228, 220);
-            this.checkedListBox1.TabIndex = 2;
+            this.po_gen_ecert.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.po_gen_ecert.FormattingEnabled = true;
+            this.po_gen_ecert.Items.AddRange(new object[] {
+            "1234",
+            "5678",
+            "91011"});
+            this.po_gen_ecert.Location = new System.Drawing.Point(93, 5);
+            this.po_gen_ecert.Margin = new System.Windows.Forms.Padding(5);
+            this.po_gen_ecert.Name = "po_gen_ecert";
+            this.po_gen_ecert.Size = new System.Drawing.Size(272, 124);
+            this.po_gen_ecert.TabIndex = 2;
             // 
-            // textBox1
+            // ecert_send_as_input
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBox1.Location = new System.Drawing.Point(99, 240);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 29);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "name";
+            this.ecert_send_as_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.ecert_send_as_input.Location = new System.Drawing.Point(93, 159);
+            this.ecert_send_as_input.Margin = new System.Windows.Forms.Padding(5);
+            this.ecert_send_as_input.Name = "ecert_send_as_input";
+            this.ecert_send_as_input.Size = new System.Drawing.Size(228, 29);
+            this.ecert_send_as_input.TabIndex = 3;
+            this.ecert_send_as_input.Text = "name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(3, 235);
+            this.label2.Location = new System.Drawing.Point(3, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 48);
             this.label2.TabIndex = 4;
@@ -88,75 +91,70 @@ namespace FInalProject.E_Certs
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.Location = new System.Drawing.Point(3, 283);
+            this.label3.Location = new System.Drawing.Point(3, 231);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "Cert Qty:";
             // 
-            // numericUpDown1
+            // ecert_make_qty
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.numericUpDown1.Location = new System.Drawing.Point(99, 288);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(5);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(82, 29);
-            this.numericUpDown1.TabIndex = 7;
+            this.ecert_make_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.ecert_make_qty.Location = new System.Drawing.Point(93, 236);
+            this.ecert_make_qty.Margin = new System.Windows.Forms.Padding(5);
+            this.ecert_make_qty.Name = "ecert_make_qty";
+            this.ecert_make_qty.Size = new System.Drawing.Size(82, 29);
+            this.ecert_make_qty.TabIndex = 7;
+            this.ecert_make_qty.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // b_gen_cert
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.b_gen_cert, 2);
             this.b_gen_cert.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.b_gen_cert.Location = new System.Drawing.Point(5, 327);
+            this.b_gen_cert.Location = new System.Drawing.Point(5, 313);
             this.b_gen_cert.Margin = new System.Windows.Forms.Padding(5);
             this.b_gen_cert.Name = "b_gen_cert";
-            this.b_gen_cert.Size = new System.Drawing.Size(306, 33);
+            this.b_gen_cert.Size = new System.Drawing.Size(374, 33);
             this.b_gen_cert.TabIndex = 8;
             this.b_gen_cert.Text = "Generate E-Cert";
             this.b_gen_cert.UseVisualStyleBackColor = true;
-            this.b_gen_cert.Click += new System.EventHandler(this.button1_Click);
+            this.b_gen_cert.Click += new System.EventHandler(this.b_gen_cert_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.48101F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.51899F));
-            this.tableLayoutPanel1.Controls.Add(this.gen_ecert_progress_bar, 0, 4);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.91667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.08334F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkedListBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.po_gen_ecert, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ecert_send_as_input, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ecert_make_qty, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.b_gen_cert, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(332, 385);
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 385);
             this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // gen_ecert_progress_bar
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.gen_ecert_progress_bar, 2);
-            this.gen_ecert_progress_bar.Location = new System.Drawing.Point(3, 368);
-            this.gen_ecert_progress_bar.Name = "gen_ecert_progress_bar";
-            this.gen_ecert_progress_bar.Size = new System.Drawing.Size(326, 14);
-            this.gen_ecert_progress_bar.TabIndex = 13;
             // 
             // E_Cert_Gen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 404);
+            this.ClientSize = new System.Drawing.Size(399, 378);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "E_Cert_Gen";
             this.Text = "E-Cert";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ecert_make_qty)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -165,13 +163,12 @@ namespace FInalProject.E_Certs
 
         #endregion
         private Label label1;
-        private CheckedListBox checkedListBox1;
-        private TextBox textBox1;
+        private CheckedListBox po_gen_ecert;
+        private TextBox ecert_send_as_input;
         private Label label2;
         private Label label3;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown ecert_make_qty;
         private Button b_gen_cert;
         private TableLayoutPanel tableLayoutPanel1;
-        private ProgressBar gen_ecert_progress_bar;
     }
 }
