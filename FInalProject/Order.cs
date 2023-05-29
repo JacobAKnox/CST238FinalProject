@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
-
-
 namespace FinalProject
 {
     public partial class Window : Form
     {
         private Dictionary<string, Order> order_list = new Dictionary<string, Order>();
         
+        // Allows for editing of the images to replicate server 
         public static Window orderWindowInstance;
         public PictureBox ecert_stats;
-
+        public Button create_ecert_button, view_ecert_button;
+        // Allows for editing of the images to replicate server 
 
         public Window()
         {
@@ -53,6 +53,13 @@ namespace FinalProject
 
             this.WorklistGrid.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WorklistGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            
+            //Applies this isntance so it can be updated by the popups
+            orderWindowInstance = this;
+            ecert_stats = documents_top_ecert_status_image;
+            create_ecert_button = documents_top_create_ecert;
+            view_ecert_button = documents_top_view_ecert;
+
         }
         
         private void UpdateDataGridView2()
@@ -77,13 +84,6 @@ namespace FinalProject
             this.OrderGridView.DataSource = this.SelectedOrder;
         }
 
-        private void makecert_Click(object sender, EventArgs e)
-        {
-            var formPopup = new E_Certs.E_Cert_Gen();
-            formPopup.Show(this); // if you need non-modal window
-
-        }
-
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             UpdateDataGridView2();
@@ -94,9 +94,16 @@ namespace FinalProject
             UpdateDataGridView2();
         }
 
-        private void Window_Load(object sender, EventArgs e)
+        private void documents_top_create_ecert_Click(object sender, EventArgs e)
         {
-
+            //Send the insance through so that they are accessable by other forms
+            var formPopup = new E_Certs.E_Cert_Gen(
+                orderWindowInstance,
+                documents_top_ecert_status_image,
+                documents_top_view_ecert,
+                documents_top_create_ecert
+                );
+            formPopup.Show(this); // if you need non-modal window
         }
     }
 

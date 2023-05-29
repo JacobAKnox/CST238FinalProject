@@ -58,6 +58,7 @@
     <Compile Include="E-Certs\E-Cert-Send.Designer.cs">
       <DependentUpon>E-Cert-Send.cs</DependentUpon>
     </Compile>
+    <Compile Include="E-Certs\E-Cert.cs" />
     <Compile Include="EmailWarning.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +125,14 @@
   <ItemGroup>
     <None Include="Resources\Check Icon.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="E-Certs\E-Certs_status_icons\created_sent.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E-Certs\E-Certs_status_icons\created_unsent.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E-Certs\E-Certs_status_icons\not_created.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

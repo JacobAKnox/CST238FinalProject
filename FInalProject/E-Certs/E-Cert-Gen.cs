@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FInalProject.E_Certs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,25 +20,36 @@ namespace FinalProject.E_Certs
         // Used to call back to the instance of the window to close it from the new window
         public static E_Cert_Gen e_Cert_Gen_Instance;
 
-        public E_Cert_Gen()
+        public Window form_instance_of_order_window;
+        public PictureBox ecert_status_icon;
+        public Button ecert_view_button, ecert_create_button;
+
+        public E_Cert_Gen(Window instance_of_order_window, PictureBox ecert_status_icon_insance, Button ecert_view_button_insance, Button ecert_create_button_insance)
         {
             InitializeComponent();
             e_Cert_Gen_Instance = this;
+
+            form_instance_of_order_window = instance_of_order_window;
+            ecert_status_icon = ecert_status_icon_insance;
+            ecert_view_button = ecert_view_button_insance;
+            ecert_create_button = ecert_create_button_insance;
         }
 
-        private void generate_ecert()
+        private E_Cert generate_ecert()
         {
-
-            //This is where the E-Cert generation would go 
-            Console.WriteLine("Ecert Generated");
-
+            // I tottally could have just passed this E_Cert through the constructor,
+            // this is more to model the correct workflow of the program
+            E_Cert cert = new E_Cert(form_instance_of_order_window, 
+                ecert_status_icon, 
+                ecert_view_button, 
+                ecert_create_button);
+            
+            return cert;
         }
 
         private void b_gen_cert_Click(object sender, EventArgs e)
         {
-            generate_ecert();
-            
-            var formPopup = new E_Certs.E_Cert_Send(ecert_send_as_input.Text, e_Cert_Gen_Instance);
+            var formPopup = new E_Certs.E_Cert_Send(ecert_send_as_input.Text, e_Cert_Gen_Instance, generate_ecert());
             formPopup.Show(this);
         }
     }

@@ -169,7 +169,8 @@
             this.ClientSize = new System.Drawing.Size(666, 621);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "E_Cert_Send";
-            this.Text = "E_Cert_Send";
+            this.Text = "Send E-Cert";
+            this.Load += new System.EventHandler(this.E_Cert_Send_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
