@@ -225,10 +225,13 @@ namespace FinalProject
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold);
-            this.richTextBox2.Location = new System.Drawing.Point(491, 50);
+            this.richTextBox2.Location = new System.Drawing.Point(452, 45);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox2.Multiline = false;
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(416, 42);
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox2.Size = new System.Drawing.Size(489, 42);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.Text = "Update E-Cert Emails ";
             // 
