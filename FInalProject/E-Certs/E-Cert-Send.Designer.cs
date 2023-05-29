@@ -136,7 +136,7 @@
             this.ecert_send_ecert.TabIndex = 8;
             this.ecert_send_ecert.Text = "Send E-Cert";
             this.ecert_send_ecert.UseVisualStyleBackColor = true;
-            this.ecert_send_ecert.Click += new System.EventHandler(this.b_send_ecert_Click);
+            this.ecert_send_ecert.Click += new System.EventHandler(this.ecert_send_ecert_Click);
             // 
             // ecery_edit_permanant_group
             // 

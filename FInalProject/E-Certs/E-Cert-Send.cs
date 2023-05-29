@@ -30,13 +30,6 @@ namespace FinalProject.E_Certs
 
         }
 
-        private void b_send_ecert_Click(object sender, EventArgs e)
-        {
-            //const string Filename = "\\Resources\\Check Icon.bmp";
-            //Window.orderWindowInstance.ecert_stats.Image = Image.FromFile(Filename);
-            opening_popup_instance_to_close.Close();
-        }
-
         private void ecery_edit_permanant_group_Click(object sender, EventArgs e)
         {
             var formPopup = new UpdateEmails();
@@ -46,6 +39,16 @@ namespace FinalProject.E_Certs
         private void ecert_confirm_send_data_CheckedChanged(object sender, EventArgs e)
         {
             ecert_send_ecert.Enabled = ecert_confirm_send_data.Checked;
+        }
+
+        private void ecert_send_ecert_Click(object sender, EventArgs e)
+        {
+            //change icon of sending icon based on stage
+
+            //const string Filename = "\\Resources\\Check Icon.bmp";
+            //Window.orderWindowInstance.ecert_stats.Image = Image.FromFile(Filename);
+
+            opening_popup_instance_to_close.Close();
         }
     }
 }
