@@ -113,7 +113,7 @@ namespace FinalProject
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox3.TabIndex = 21;
-            this.checkedListBox3.ItemCheck += new ItemCheckEventHandler(checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox3.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -147,7 +147,7 @@ namespace FinalProject
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox2.TabIndex = 18;
-            this.checkedListBox2.ItemCheck += new ItemCheckEventHandler(checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -180,7 +180,7 @@ namespace FinalProject
             this.checkedListBox1.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.ThreeDCheckBoxes = true;
-            this.checkedListBox1.ItemCheck += new ItemCheckEventHandler(checkedListBox1_SelectedIndexChanged); 
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -228,7 +228,7 @@ namespace FinalProject
             this.richTextBox2.Location = new System.Drawing.Point(491, 50);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(400, 42);
+            this.richTextBox2.Size = new System.Drawing.Size(416, 42);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.Text = "Update E-Cert Emails ";
             // 
