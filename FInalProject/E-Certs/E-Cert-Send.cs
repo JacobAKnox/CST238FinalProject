@@ -35,7 +35,7 @@ namespace FinalProject.E_Certs
 
         private void ecery_edit_permanant_group_Click(object sender, EventArgs e)
         {
-            var formPopup = new UpdateEmails();
+            var formPopup = new UpdateEmails(e_cert_to_send);
             formPopup.Show(this);
         }
 

@@ -52,7 +52,7 @@ namespace FinalProject
             this.pictureBox1.ImageLocation = "C:\\Users\\earob\\OneDrive\\Desktop\\CST238FinalProj\\FinalProjRMSMock\\FinalProjRMSMock" +
     "\\logo.png";
             this.pictureBox1.Location = new System.Drawing.Point(19, 23);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(116, 88);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -75,7 +75,7 @@ namespace FinalProject
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(4, 162);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(981, 422);
             this.panel1.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace FinalProject
             this.button4.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(553, 356);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(22, 19);
             this.button4.TabIndex = 23;
@@ -97,7 +97,7 @@ namespace FinalProject
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(416, 358);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(133, 20);
             this.textBox5.TabIndex = 22;
@@ -109,7 +109,7 @@ namespace FinalProject
             "manager2@company.com",
             "owner@company.com"});
             this.checkedListBox3.Location = new System.Drawing.Point(416, 292);
-            this.checkedListBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBox3.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(160, 49);
             this.checkedListBox3.TabIndex = 21;
@@ -120,7 +120,7 @@ namespace FinalProject
             this.button3.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(553, 239);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 19);
             this.button3.TabIndex = 20;
@@ -131,7 +131,7 @@ namespace FinalProject
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(416, 240);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(133, 20);
             this.textBox3.TabIndex = 19;
@@ -142,7 +142,7 @@ namespace FinalProject
             "ourCompany@company.com",
             "ourCompanyManager@company.com"});
             this.checkedListBox2.Location = new System.Drawing.Point(416, 175);
-            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(160, 49);
             this.checkedListBox2.TabIndex = 18;
@@ -175,7 +175,7 @@ namespace FinalProject
             "manager1@company.com",
             "manager2@company.com"});
             this.checkedListBox1.Location = new System.Drawing.Point(416, 54);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(160, 49);
             this.checkedListBox1.TabIndex = 0;
@@ -184,7 +184,7 @@ namespace FinalProject
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(416, 119);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(133, 20);
             this.textBox2.TabIndex = 10;
@@ -195,7 +195,7 @@ namespace FinalProject
             this.button1.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(553, 119);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 19);
             this.button1.TabIndex = 8;
@@ -226,7 +226,7 @@ namespace FinalProject
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold);
             this.richTextBox2.Location = new System.Drawing.Point(368, 41);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(300, 34);
             this.richTextBox2.TabIndex = 4;
@@ -258,7 +258,7 @@ namespace FinalProject
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpdateEmails";

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FInalProject.E_Certs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,12 @@ namespace FinalProject
 {
     public partial class UpdateEmails : Form
     {
-        public UpdateEmails()
+        E_Cert Cert;
+        
+        public UpdateEmails(E_Cert read_ecert)
         {
             InitializeComponent();
+            Cert = read_ecert;
         }
 
         private void button1Click(object sender, EventArgs e)
@@ -39,61 +43,28 @@ namespace FinalProject
             checkedListBox3.Items.Add(email);
             textBox3.Clear();
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             EmailWarning warning = new EmailWarning();
             warning.ShowDialog();
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void UpdateEmails_Load(object sender, EventArgs e)
         {
-
+            foreach (String customer in Cert.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
+            {
+                checkedListBox1.Items.Add(customer);
+            }
+            foreach (String customer in Cert.get_email_address_list(E_Cert.Email_Address_List.SEND_AS))
+            {
+                checkedListBox2.Items.Add(customer);
+            }
+            foreach (String customer in Cert.get_email_address_list(E_Cert.Email_Address_List.CC))
+            {
+                checkedListBox3.Items.Add(customer);
+            }
         }
+
     }
 }
