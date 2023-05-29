@@ -113,7 +113,7 @@ namespace FinalProject
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox3.TabIndex = 21;
-            this.checkedListBox3.ItemCheck += new ItemCheckEventHandler(checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox3.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -147,7 +147,7 @@ namespace FinalProject
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox2.TabIndex = 18;
-            this.checkedListBox2.ItemCheck += new ItemCheckEventHandler(checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -180,7 +180,7 @@ namespace FinalProject
             this.checkedListBox1.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.ThreeDCheckBoxes = true;
-            this.checkedListBox1.ItemCheck += new ItemCheckEventHandler(checkedListBox1_SelectedIndexChanged); 
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -225,10 +225,13 @@ namespace FinalProject
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold);
-            this.richTextBox2.Location = new System.Drawing.Point(491, 50);
+            this.richTextBox2.Location = new System.Drawing.Point(452, 45);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox2.Multiline = false;
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(400, 42);
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox2.Size = new System.Drawing.Size(489, 42);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.Text = "Update E-Cert Emails ";
             // 
@@ -264,7 +267,7 @@ namespace FinalProject
             this.Name = "UpdateEmails";
             this.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Update E-Cert Emails";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.UpdateEmails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
