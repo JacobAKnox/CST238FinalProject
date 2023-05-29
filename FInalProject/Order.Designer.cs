@@ -35,6 +35,7 @@ namespace FinalProject
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Window));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.WorklistGrid = new System.Windows.Forms.DataGridView();
@@ -53,7 +54,6 @@ namespace FinalProject
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.OrderGridView = new System.Windows.Forms.DataGridView();
-            this.increment = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -106,13 +106,15 @@ namespace FinalProject
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtyCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.worklist_data = new System.Windows.Forms.BindingSource(this.components);
+            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.stepnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.increment = new System.Windows.Forms.DataGridViewButtonColumn();
             this.completeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NotesEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorklistGrid)).BeginInit();
@@ -353,9 +355,9 @@ namespace FinalProject
             // 
             // OrderGridView
             // 
-            this.OrderGridView.AllowUserToAddRows = false;
             this.OrderGridView.AllowUserToDeleteRows = false;
             this.OrderGridView.AutoGenerateColumns = false;
+            this.OrderGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OrderGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.OrderGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -374,10 +376,13 @@ namespace FinalProject
             this.completeDataGridViewTextBoxColumn,
             this.todoDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn,
+            this.NotesEdit,
             this.notesDataGridViewTextBoxColumn});
-            this.OrderGridView.Cursor = System.Windows.Forms.Cursors.No;
+            this.OrderGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.OrderGridView.DataSource = this.SelectedOrder;
             this.OrderGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrderGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.OrderGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.OrderGridView.Location = new System.Drawing.Point(3, 188);
             this.OrderGridView.Name = "OrderGridView";
             this.OrderGridView.RowHeadersVisible = false;
@@ -386,23 +391,6 @@ namespace FinalProject
             this.OrderGridView.Size = new System.Drawing.Size(1536, 651);
             this.OrderGridView.TabIndex = 3;
             this.OrderGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // increment
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.NullValue = null;
-            this.increment.DefaultCellStyle = dataGridViewCellStyle2;
-            this.increment.FillWeight = 6.012024F;
-            this.increment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.increment.HeaderText = "";
-            this.increment.MinimumWidth = 6;
-            this.increment.Name = "increment";
-            this.increment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.increment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.increment.Text = "+";
-            this.increment.UseColumnTextForButtonValue = true;
-            this.increment.Width = 30;
             // 
             // panel1
             // 
@@ -936,6 +924,10 @@ namespace FinalProject
             this.worklist_data.DataSource = typeof(FinalProject.Order);
             this.worklist_data.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
+            // SelectedOrder
+            // 
+            this.SelectedOrder.DataSource = typeof(FinalProject.OrderStep);
+            // 
             // stepnameDataGridViewTextBoxColumn
             // 
             this.stepnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -956,6 +948,24 @@ namespace FinalProject
             this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
             this.duedateDataGridViewTextBoxColumn.ReadOnly = true;
             this.duedateDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // increment
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.NullValue = null;
+            this.increment.DefaultCellStyle = dataGridViewCellStyle2;
+            this.increment.FillWeight = 6.012024F;
+            this.increment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.increment.HeaderText = "";
+            this.increment.MinimumWidth = 6;
+            this.increment.Name = "increment";
+            this.increment.ReadOnly = true;
+            this.increment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.increment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.increment.Text = "+";
+            this.increment.UseColumnTextForButtonValue = true;
+            this.increment.Width = 30;
             // 
             // completeDataGridViewTextBoxColumn
             // 
@@ -988,6 +998,19 @@ namespace FinalProject
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
             this.totalDataGridViewTextBoxColumn.Width = 76;
             // 
+            // NotesEdit
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.NotesEdit.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NotesEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NotesEdit.HeaderText = "";
+            this.NotesEdit.Name = "NotesEdit";
+            this.NotesEdit.ReadOnly = true;
+            this.NotesEdit.Text = "✎";
+            this.NotesEdit.UseColumnTextForButtonValue = true;
+            this.NotesEdit.Width = 30;
+            // 
             // notesDataGridViewTextBoxColumn
             // 
             this.notesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -996,10 +1019,6 @@ namespace FinalProject
             this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
             this.notesDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            // 
-            // SelectedOrder
-            // 
-            this.SelectedOrder.DataSource = typeof(FinalProject.OrderStep);
             // 
             // Window
             // 
@@ -1124,16 +1143,17 @@ namespace FinalProject
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox ActiveOrdersOnly;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private PictureBox pictureBox5;
+        private Label label12;
+        private Label label13;
         private DataGridViewTextBoxColumn stepnameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn duedateDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn increment;
         private DataGridViewTextBoxColumn completeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn todoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private DataGridViewButtonColumn NotesEdit;
         private DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
-        private PictureBox pictureBox5;
-        private Label label12;
-        private Label label13;
     }
 }
 

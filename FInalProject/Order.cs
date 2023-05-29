@@ -20,6 +20,9 @@ namespace FinalProject
         public static Window orderWindowInstance;
         public PictureBox ecert_stats;
 
+        private const int increment_column = 2;
+        private const int edit_column = 6;
+        private const int notes_column = 7;
 
         public Window()
         {
@@ -66,9 +69,15 @@ namespace FinalProject
         {
             var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0) {
-                ((OrderStep) this.SelectedOrder.List[e.RowIndex]).increment_done();
-                update_grid();
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == increment_column) { 
+                    ((OrderStep)this.SelectedOrder.List[e.RowIndex]).increment_done();
+                    update_grid();
+                }
+                if (e.ColumnIndex == edit_column) {
+                    this.OrderGridView.CurrentCell = this.OrderGridView[notes_column, e.RowIndex];
+                }
             }
         }
 
