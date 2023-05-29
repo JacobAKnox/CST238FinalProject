@@ -36,8 +36,9 @@
             this.ecert_send_send_as = new System.Windows.Forms.TextBox();
             this.ecert_send_customers = new System.Windows.Forms.CheckedListBox();
             this.ecert_send_cc = new System.Windows.Forms.CheckedListBox();
+            this.ecert_send_ecert = new System.Windows.Forms.Button();
             this.ecery_edit_permanant_group = new System.Windows.Forms.Button();
-            this.b_send_ecert = new System.Windows.Forms.Button();
+            this.ecert_confirm_send_data = new System.Windows.Forms.CheckBox();
             this.ecert_group_edit_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,8 +55,9 @@
             this.tableLayoutPanel2.Controls.Add(this.ecert_send_send_as, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.ecert_send_customers, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.ecert_send_cc, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.b_send_ecert, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.ecert_send_ecert, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.ecery_edit_permanant_group, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.ecert_confirm_send_data, 1, 3);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -63,9 +65,9 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.54054F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.45946F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(613, 581);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.29897F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.70103F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(613, 604);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // label7
@@ -123,6 +125,19 @@
             this.ecert_send_cc.Size = new System.Drawing.Size(392, 220);
             this.ecert_send_cc.TabIndex = 20;
             // 
+            // ecert_send_ecert
+            // 
+            this.ecert_send_ecert.AutoSize = true;
+            this.ecert_send_ecert.Enabled = false;
+            this.ecert_send_ecert.Location = new System.Drawing.Point(127, 554);
+            this.ecert_send_ecert.Margin = new System.Windows.Forms.Padding(5);
+            this.ecert_send_ecert.Name = "ecert_send_ecert";
+            this.ecert_send_ecert.Size = new System.Drawing.Size(388, 34);
+            this.ecert_send_ecert.TabIndex = 8;
+            this.ecert_send_ecert.Text = "Send E-Cert";
+            this.ecert_send_ecert.UseVisualStyleBackColor = true;
+            this.ecert_send_ecert.Click += new System.EventHandler(this.b_send_ecert_Click);
+            // 
             // ecery_edit_permanant_group
             // 
             this.ecery_edit_permanant_group.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -136,18 +151,16 @@
             this.ecery_edit_permanant_group.UseVisualStyleBackColor = true;
             this.ecery_edit_permanant_group.Click += new System.EventHandler(this.ecery_edit_permanant_group_Click);
             // 
-            // b_send_ecert
+            // ecert_confirm_send_data
             // 
-            this.b_send_ecert.AutoSize = true;
-            this.b_send_ecert.Enabled = false;
-            this.b_send_ecert.Location = new System.Drawing.Point(127, 541);
-            this.b_send_ecert.Margin = new System.Windows.Forms.Padding(5);
-            this.b_send_ecert.Name = "b_send_ecert";
-            this.b_send_ecert.Size = new System.Drawing.Size(388, 34);
-            this.b_send_ecert.TabIndex = 8;
-            this.b_send_ecert.Text = "Send E-Cert";
-            this.b_send_ecert.UseVisualStyleBackColor = true;
-            this.b_send_ecert.Click += new System.EventHandler(this.b_send_ecert_Click);
+            this.ecert_confirm_send_data.AutoSize = true;
+            this.ecert_confirm_send_data.Location = new System.Drawing.Point(125, 510);
+            this.ecert_confirm_send_data.Name = "ecert_confirm_send_data";
+            this.ecert_confirm_send_data.Size = new System.Drawing.Size(258, 28);
+            this.ecert_confirm_send_data.TabIndex = 21;
+            this.ecert_confirm_send_data.Text = "Confirm recipeints of E-Cert";
+            this.ecert_confirm_send_data.UseVisualStyleBackColor = true;
+            this.ecert_confirm_send_data.CheckedChanged += new System.EventHandler(this.ecert_confirm_send_data_CheckedChanged);
             // 
             // E_Cert_Send
             // 
@@ -171,9 +184,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox ecert_send_send_as;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button b_send_ecert;
+        private System.Windows.Forms.Button ecert_send_ecert;
         private System.Windows.Forms.CheckedListBox ecert_send_customers;
         private System.Windows.Forms.CheckedListBox ecert_send_cc;
         private System.Windows.Forms.ToolTip ecert_group_edit_tooltip;
+        private System.Windows.Forms.CheckBox ecert_confirm_send_data;
     }
 }
