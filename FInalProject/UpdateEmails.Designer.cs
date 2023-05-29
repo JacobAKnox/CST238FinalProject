@@ -264,7 +264,7 @@ namespace FinalProject
             this.Name = "UpdateEmails";
             this.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Update E-Cert Emails";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.UpdateEmails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
