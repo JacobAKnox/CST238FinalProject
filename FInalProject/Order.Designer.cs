@@ -1020,8 +1020,7 @@ namespace FinalProject
             this.ClientSize = new System.Drawing.Size(1574, 914);
             this.Controls.Add(this.tabControl1);
             this.Name = "Window";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Window_Load);
+            this.Text = "Manufacturing App";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
