@@ -36,23 +36,22 @@ namespace FinalProject
                 new OrderStep("Heat Treatment", "5/14", COUNT, ""),
                 new OrderStep("Plating", "5/17", COUNT, ""),
                 new OrderStep("QC", "5/18", COUNT, "")
-                ));
+                )
+            {
+                Part = "Some Part",
+                Op = "Some Operation",
+                PONumber = 12345,
+                Due = "6/15",
+                PromiseDate = "6/12",
+                description = "Some description",
+                qtyComplete = 10
+            });
 
             foreach (OrderStep step in order_list["1234"].steps) { 
                 this.SelectedOrder.Add(step);
             }
 
-            worklist_data.Add(new Order("1234")
-
-            {
-                Part = "Some Part",
-                Op= "Some Operation",
-                PONumber= 12345,
-                Due= "6/15",
-                PromiseDate= "6/12",
-                description = "Some description",
-                qtyComplete= 10
-            });
+            worklist_data.Add(order_list["1234"]);
 
             // I have to set the here becasue visual studio resets it in the desginer as a "feature"
             this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
