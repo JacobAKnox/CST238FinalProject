@@ -42,13 +42,17 @@ namespace FinalProject
                 this.SelectedOrder.Add(step);
             }
 
-            worklist_data.Add(new Order("2345",
-                new OrderStep("Forming", "5/11", COUNT, ""),
-                new OrderStep("Threads", "5/13", COUNT, ""),
-                new OrderStep("Heat Treatment", "5/14", COUNT, ""),
-                new OrderStep("Plating", "5/17", COUNT, ""),
-                new OrderStep("QC", "5/18", COUNT, "")
-                ));
+            worklist_data.Add(new Order("1234")
+
+            {
+                Part = "Some Part",
+                Op= "Some Operation",
+                PONumber= 12345,
+                Due= "6/15",
+                PromiseDate= "6/12",
+                description = "Some description",
+                qtyComplete= 10
+            });
 
             // I have to set the here becasue visual studio resets it in the desginer as a "feature"
             this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -126,6 +130,8 @@ namespace FinalProject
         public string PromiseDate { get; set; }
         public string description { get; set; }
         public int qtyComplete { get; set; }
+
+
 
         
         public List<OrderStep> steps = new List<OrderStep>();
