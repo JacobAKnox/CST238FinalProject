@@ -33,12 +33,21 @@ namespace FinalProject
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Window));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.WorklistGrid = new System.Windows.Forms.DataGridView();
+            this.rMSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.partDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pONumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promiseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.worklist_data = new System.Windows.Forms.BindingSource(this.components);
             this.panel11 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,6 +61,15 @@ namespace FinalProject
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.OrderGridView = new System.Windows.Forms.DataGridView();
+            this.stepnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.increment = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.completeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NotesEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,32 +113,16 @@ namespace FinalProject
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.increment = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.NotesEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.rMSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pONumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.promiseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.worklist_data = new System.Windows.Forms.BindingSource(this.components);
-            this.stepnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.completeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorklistGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -137,8 +139,6 @@ namespace FinalProject
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -198,6 +198,67 @@ namespace FinalProject
             this.WorklistGrid.Size = new System.Drawing.Size(1536, 608);
             this.WorklistGrid.TabIndex = 27;
             // 
+            // rMSDataGridViewTextBoxColumn
+            // 
+            this.rMSDataGridViewTextBoxColumn.DataPropertyName = "RMS";
+            this.rMSDataGridViewTextBoxColumn.HeaderText = "RMS";
+            this.rMSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rMSDataGridViewTextBoxColumn.Name = "rMSDataGridViewTextBoxColumn";
+            // 
+            // partDataGridViewTextBoxColumn
+            // 
+            this.partDataGridViewTextBoxColumn.DataPropertyName = "Part";
+            this.partDataGridViewTextBoxColumn.HeaderText = "Part";
+            this.partDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.partDataGridViewTextBoxColumn.Name = "partDataGridViewTextBoxColumn";
+            // 
+            // opDataGridViewTextBoxColumn
+            // 
+            this.opDataGridViewTextBoxColumn.DataPropertyName = "Op";
+            this.opDataGridViewTextBoxColumn.HeaderText = "Op";
+            this.opDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.opDataGridViewTextBoxColumn.Name = "opDataGridViewTextBoxColumn";
+            // 
+            // pONumberDataGridViewTextBoxColumn
+            // 
+            this.pONumberDataGridViewTextBoxColumn.DataPropertyName = "PONumber";
+            this.pONumberDataGridViewTextBoxColumn.HeaderText = "PONumber";
+            this.pONumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pONumberDataGridViewTextBoxColumn.Name = "pONumberDataGridViewTextBoxColumn";
+            // 
+            // dueDataGridViewTextBoxColumn
+            // 
+            this.dueDataGridViewTextBoxColumn.DataPropertyName = "Due";
+            this.dueDataGridViewTextBoxColumn.HeaderText = "Due";
+            this.dueDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dueDataGridViewTextBoxColumn.Name = "dueDataGridViewTextBoxColumn";
+            // 
+            // promiseDateDataGridViewTextBoxColumn
+            // 
+            this.promiseDateDataGridViewTextBoxColumn.DataPropertyName = "PromiseDate";
+            this.promiseDateDataGridViewTextBoxColumn.HeaderText = "PromiseDate";
+            this.promiseDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.promiseDateDataGridViewTextBoxColumn.Name = "promiseDateDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // qtyCompleteDataGridViewTextBoxColumn
+            // 
+            this.qtyCompleteDataGridViewTextBoxColumn.DataPropertyName = "qtyComplete";
+            this.qtyCompleteDataGridViewTextBoxColumn.HeaderText = "qtyComplete";
+            this.qtyCompleteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.qtyCompleteDataGridViewTextBoxColumn.Name = "qtyCompleteDataGridViewTextBoxColumn";
+            // 
+            // worklist_data
+            // 
+            this.worklist_data.DataSource = typeof(FinalProject.Order);
+            this.worklist_data.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
             // panel11
             // 
             this.panel11.AutoScroll = true;
@@ -217,7 +278,7 @@ namespace FinalProject
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(792, 5);
+            this.button7.Location = new System.Drawing.Point(792, 7);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(83, 29);
             this.button7.TabIndex = 30;
@@ -297,7 +358,7 @@ namespace FinalProject
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(630, 117);
+            this.button3.Location = new System.Drawing.Point(833, 122);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(67, 38);
             this.button3.TabIndex = 3;
@@ -308,7 +369,7 @@ namespace FinalProject
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBox3.Location = new System.Drawing.Point(721, 117);
+            this.textBox3.Location = new System.Drawing.Point(631, 122);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(196, 38);
@@ -346,14 +407,14 @@ namespace FinalProject
             this.OrderGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OrderGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.OrderGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.OrderGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.OrderGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.OrderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrderGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stepnameDataGridViewTextBoxColumn,
@@ -378,6 +439,108 @@ namespace FinalProject
             this.OrderGridView.Size = new System.Drawing.Size(1536, 651);
             this.OrderGridView.TabIndex = 3;
             this.OrderGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // stepnameDataGridViewTextBoxColumn
+            // 
+            this.stepnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stepnameDataGridViewTextBoxColumn.DataPropertyName = "step_name";
+            this.stepnameDataGridViewTextBoxColumn.HeaderText = "Operation";
+            this.stepnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stepnameDataGridViewTextBoxColumn.Name = "stepnameDataGridViewTextBoxColumn";
+            this.stepnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stepnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.stepnameDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // duedateDataGridViewTextBoxColumn
+            // 
+            this.duedateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.duedateDataGridViewTextBoxColumn.DataPropertyName = "due_date";
+            this.duedateDataGridViewTextBoxColumn.HeaderText = "Due";
+            this.duedateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
+            this.duedateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.duedateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.duedateDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // increment
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.NullValue = null;
+            this.increment.DefaultCellStyle = dataGridViewCellStyle8;
+            this.increment.FillWeight = 6.012024F;
+            this.increment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.increment.HeaderText = "";
+            this.increment.MinimumWidth = 6;
+            this.increment.Name = "increment";
+            this.increment.ReadOnly = true;
+            this.increment.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.increment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.increment.Text = "+";
+            this.increment.UseColumnTextForButtonValue = true;
+            this.increment.Width = 30;
+            // 
+            // completeDataGridViewTextBoxColumn
+            // 
+            this.completeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.completeDataGridViewTextBoxColumn.DataPropertyName = "complete";
+            this.completeDataGridViewTextBoxColumn.HeaderText = "Qty. Complete";
+            this.completeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.completeDataGridViewTextBoxColumn.Name = "completeDataGridViewTextBoxColumn";
+            this.completeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.completeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.completeDataGridViewTextBoxColumn.Width = 154;
+            // 
+            // todoDataGridViewTextBoxColumn
+            // 
+            this.todoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.todoDataGridViewTextBoxColumn.DataPropertyName = "todo";
+            this.todoDataGridViewTextBoxColumn.HeaderText = "Qty. Todo";
+            this.todoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.todoDataGridViewTextBoxColumn.Name = "todoDataGridViewTextBoxColumn";
+            this.todoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.todoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.todoDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.totalDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // NotesEdit
+            // 
+            this.NotesEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.NotesEdit.DefaultCellStyle = dataGridViewCellStyle9;
+            this.NotesEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NotesEdit.HeaderText = "";
+            this.NotesEdit.Name = "NotesEdit";
+            this.NotesEdit.ReadOnly = true;
+            this.NotesEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NotesEdit.Text = "✎";
+            this.NotesEdit.UseColumnTextForButtonValue = true;
+            this.NotesEdit.Width = 30;
+            // 
+            // notesDataGridViewTextBoxColumn
+            // 
+            this.notesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
+            this.notesDataGridViewTextBoxColumn.FillWeight = 193.988F;
+            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
+            this.notesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            this.notesDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SelectedOrder
+            // 
+            this.SelectedOrder.DataSource = typeof(FinalProject.OrderStep);
             // 
             // panel1
             // 
@@ -850,169 +1013,6 @@ namespace FinalProject
             this.webBrowser1.Size = new System.Drawing.Size(774, 250);
             this.webBrowser1.TabIndex = 15;
             // 
-            // increment
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.NullValue = null;
-            this.increment.DefaultCellStyle = dataGridViewCellStyle2;
-            this.increment.FillWeight = 6.012024F;
-            this.increment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.increment.HeaderText = "";
-            this.increment.MinimumWidth = 6;
-            this.increment.Name = "increment";
-            this.increment.ReadOnly = true;
-            this.increment.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.increment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.increment.Text = "+";
-            this.increment.UseColumnTextForButtonValue = true;
-            this.increment.Width = 30;
-            // 
-            // NotesEdit
-            // 
-            this.NotesEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.NotesEdit.DefaultCellStyle = dataGridViewCellStyle3;
-            this.NotesEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NotesEdit.HeaderText = "";
-            this.NotesEdit.Name = "NotesEdit";
-            this.NotesEdit.ReadOnly = true;
-            this.NotesEdit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NotesEdit.Text = "✎";
-            this.NotesEdit.UseColumnTextForButtonValue = true;
-            this.NotesEdit.Width = 30;
-            // 
-            // rMSDataGridViewTextBoxColumn
-            // 
-            this.rMSDataGridViewTextBoxColumn.DataPropertyName = "RMS";
-            this.rMSDataGridViewTextBoxColumn.HeaderText = "RMS";
-            this.rMSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rMSDataGridViewTextBoxColumn.Name = "rMSDataGridViewTextBoxColumn";
-            // 
-            // partDataGridViewTextBoxColumn
-            // 
-            this.partDataGridViewTextBoxColumn.DataPropertyName = "Part";
-            this.partDataGridViewTextBoxColumn.HeaderText = "Part";
-            this.partDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.partDataGridViewTextBoxColumn.Name = "partDataGridViewTextBoxColumn";
-            // 
-            // opDataGridViewTextBoxColumn
-            // 
-            this.opDataGridViewTextBoxColumn.DataPropertyName = "Op";
-            this.opDataGridViewTextBoxColumn.HeaderText = "Op";
-            this.opDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.opDataGridViewTextBoxColumn.Name = "opDataGridViewTextBoxColumn";
-            // 
-            // pONumberDataGridViewTextBoxColumn
-            // 
-            this.pONumberDataGridViewTextBoxColumn.DataPropertyName = "PONumber";
-            this.pONumberDataGridViewTextBoxColumn.HeaderText = "PONumber";
-            this.pONumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pONumberDataGridViewTextBoxColumn.Name = "pONumberDataGridViewTextBoxColumn";
-            // 
-            // dueDataGridViewTextBoxColumn
-            // 
-            this.dueDataGridViewTextBoxColumn.DataPropertyName = "Due";
-            this.dueDataGridViewTextBoxColumn.HeaderText = "Due";
-            this.dueDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dueDataGridViewTextBoxColumn.Name = "dueDataGridViewTextBoxColumn";
-            // 
-            // promiseDateDataGridViewTextBoxColumn
-            // 
-            this.promiseDateDataGridViewTextBoxColumn.DataPropertyName = "PromiseDate";
-            this.promiseDateDataGridViewTextBoxColumn.HeaderText = "PromiseDate";
-            this.promiseDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.promiseDateDataGridViewTextBoxColumn.Name = "promiseDateDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // qtyCompleteDataGridViewTextBoxColumn
-            // 
-            this.qtyCompleteDataGridViewTextBoxColumn.DataPropertyName = "qtyComplete";
-            this.qtyCompleteDataGridViewTextBoxColumn.HeaderText = "qtyComplete";
-            this.qtyCompleteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.qtyCompleteDataGridViewTextBoxColumn.Name = "qtyCompleteDataGridViewTextBoxColumn";
-            // 
-            // worklist_data
-            // 
-            this.worklist_data.DataSource = typeof(FinalProject.Order);
-            this.worklist_data.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
-            // 
-            // stepnameDataGridViewTextBoxColumn
-            // 
-            this.stepnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stepnameDataGridViewTextBoxColumn.DataPropertyName = "step_name";
-            this.stepnameDataGridViewTextBoxColumn.HeaderText = "Operation";
-            this.stepnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.stepnameDataGridViewTextBoxColumn.Name = "stepnameDataGridViewTextBoxColumn";
-            this.stepnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stepnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.stepnameDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // duedateDataGridViewTextBoxColumn
-            // 
-            this.duedateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.duedateDataGridViewTextBoxColumn.DataPropertyName = "due_date";
-            this.duedateDataGridViewTextBoxColumn.HeaderText = "Due";
-            this.duedateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
-            this.duedateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.duedateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.duedateDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // completeDataGridViewTextBoxColumn
-            // 
-            this.completeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.completeDataGridViewTextBoxColumn.DataPropertyName = "complete";
-            this.completeDataGridViewTextBoxColumn.HeaderText = "Qty. Complete";
-            this.completeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.completeDataGridViewTextBoxColumn.Name = "completeDataGridViewTextBoxColumn";
-            this.completeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.completeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.completeDataGridViewTextBoxColumn.Width = 154;
-            // 
-            // todoDataGridViewTextBoxColumn
-            // 
-            this.todoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.todoDataGridViewTextBoxColumn.DataPropertyName = "todo";
-            this.todoDataGridViewTextBoxColumn.HeaderText = "Qty. Todo";
-            this.todoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.todoDataGridViewTextBoxColumn.Name = "todoDataGridViewTextBoxColumn";
-            this.todoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.todoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.todoDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.totalDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
-            this.notesDataGridViewTextBoxColumn.FillWeight = 193.988F;
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
-            this.notesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            this.notesDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // SelectedOrder
-            // 
-            this.SelectedOrder.DataSource = typeof(FinalProject.OrderStep);
-            // 
             // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1026,6 +1026,7 @@ namespace FinalProject
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorklistGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1034,6 +1035,7 @@ namespace FinalProject
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1059,8 +1061,6 @@ namespace FinalProject
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
