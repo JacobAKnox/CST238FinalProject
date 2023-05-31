@@ -53,6 +53,7 @@ namespace FinalProject
             this.button1.TabIndex = 1;
             this.button1.Text = "Yes";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(button1Click);
             // 
             // button2
             // 
@@ -65,6 +66,7 @@ namespace FinalProject
             this.button2.TabIndex = 2;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(button2Click);
             // 
             // EmailWarning
             // 
