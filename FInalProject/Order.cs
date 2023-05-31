@@ -107,7 +107,7 @@ namespace FinalProject
             return true;
         }
 
-        private void HandleOrderSearch(string order_id) {
+        private void handle_order_search(string order_id) {
             if (string.IsNullOrEmpty(order_id) || !load_order(order_id)) {
                 show_order_error(order_id);
                 return;
@@ -120,19 +120,19 @@ namespace FinalProject
 
         private void OrderSeachGo_Order_Click(object sender, EventArgs e)
         {
-            HandleOrderSearch(OrderSearchBox_Order.Text);
+            handle_order_search(OrderSearchBox_Order.Text);
         }
 
         private void OrderSearchBoxEnterHandler(object sender, KeyPressEventArgs e) {
             // enter key
             if (e.KeyChar == (char)Keys.Return) { 
-                HandleOrderSearch(((TextBox) sender).Text);
+                handle_order_search(((TextBox) sender).Text);
             }
         }
 
         private void OrderSeachGo_Main_Click(object sender, EventArgs e)
         {
-            HandleOrderSearch(OrderSearchBox_Main.Text);
+            handle_order_search(OrderSearchBox_Main.Text);
         }
 
         private void tab_chnage_handler(object sender, EventArgs e) {
@@ -165,7 +165,7 @@ namespace FinalProject
 
         private void OrderSeachGo_Docs_Click(object sender, EventArgs e)
         {
-            HandleOrderSearch(OrderSearchBox_Docs.Text);
+            handle_order_search(OrderSearchBox_Docs.Text);
         }
 
         private void initilize_fake_data() {
