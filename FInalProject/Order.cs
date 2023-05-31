@@ -107,7 +107,7 @@ namespace FinalProject
             return true;
         }
 
-        private void HandleOrderSearch(String order_id) {
+        private void HandleOrderSearch(string order_id) {
             if (string.IsNullOrEmpty(order_id) || !load_order(order_id)) {
                 show_order_error(order_id);
                 return;
