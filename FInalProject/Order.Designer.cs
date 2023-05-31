@@ -339,7 +339,7 @@ namespace FinalProject
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(462, 138);
             this.label5.TabIndex = 5;
-            this.label5.Text = "CompanyX\r\ncompany@example.com\r\n1234 Road St. town ST";
+            this.label5.Text = "CompanyX\r\ncompany@example.com\r\n1234 Road St. town ST\r\n";
             // 
             // label6
             // 
@@ -574,11 +574,11 @@ namespace FinalProject
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1074, 0);
+            this.label2.Location = new System.Drawing.Point(1120, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(462, 138);
+            this.label2.Size = new System.Drawing.Size(416, 138);
             this.label2.TabIndex = 5;
-            this.label2.Text = "CompanyX\r\ncompany@example.com\r\n1234 Road St. town ST";
+            this.label2.Text = "Qty: 30, Part No. 7567\r\nDesc: Large Bolt\r\nPO: 674567";
             // 
             // label1
             // 
@@ -957,11 +957,11 @@ namespace FinalProject
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Right;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1080, 0);
+            this.label3.Location = new System.Drawing.Point(1126, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(462, 138);
+            this.label3.Size = new System.Drawing.Size(416, 138);
             this.label3.TabIndex = 5;
-            this.label3.Text = "CompanyX\r\ncompany@example.com\r\n1234 Road St. town ST";
+            this.label3.Text = "Qty: 30, Part No. 7567\r\nDesc: Large Bolt\r\nPO: 674567\r\n";
             // 
             // label4
             // 
@@ -1133,7 +1133,6 @@ namespace FinalProject
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox ActiveOrdersOnly;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private PictureBox pictureBox5;
         private Label label12;
         private Label label13;
         private DataGridViewTextBoxColumn stepnameDataGridViewTextBoxColumn;
@@ -1144,6 +1143,7 @@ namespace FinalProject
         private DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn NotesEdit;
         private DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
+        private PictureBox pictureBox5;
     }
 }
 
