@@ -39,8 +39,6 @@ namespace FinalProject
 
             initilize_fake_data();
 
-            //load_order("1234");
-
             // I have to set the here becasue visual studio resets it in the desginer as a "feature"
             this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -150,6 +148,14 @@ namespace FinalProject
             OrderSearchBox_Docs.Text = loaded_order;
 
             // update header in orders and docs
+            String cLabel = $"{order.Part} \nID: {order.RMS}";
+            String rLabel = $"Qty: {order.quantity}, Part No. {order.part_no}\r\nDesc: {order.description}\r\nPO: {order.PONumber}\r\n";
+
+            CLabel_Order.Text = cLabel;
+            CLabel_Docs.Text = cLabel;
+
+            RLabel_Order.Text = rLabel;
+            RLabel_Docs.Text = rLabel;
 
             // move to order tab if on main
             if (MainTabs.SelectedTab == Main) {
@@ -173,13 +179,15 @@ namespace FinalProject
                 new OrderStep("QC", "5/18", COUNT, "")
                 )
             {
-                Part = "Some Part",
+                Part = "Large Bolt",
                 Op = "Some Operation",
                 PONumber = 12345,
                 Due = "6/15",
                 PromiseDate = "6/12",
-                description = "Some description",
-                qtyComplete = 10
+                description = "Large Bolt",
+                qtyComplete = 10,
+                part_no = 2,
+                quantity = COUNT
             });
 
             order_list.Add("5678", new Order("5678",
@@ -190,13 +198,15 @@ namespace FinalProject
                 new OrderStep("QC", "5/18", COUNT, "")
                 )
             {
-                Part = "Some Part",
+                Part = "Small Bolt",
                 Op = "Some Operation",
                 PONumber = 12345,
                 Due = "6/15",
                 PromiseDate = "6/12",
-                description = "Some description",
-                qtyComplete = 10
+                description = "Small Bolt",
+                qtyComplete = 10,
+                part_no = 1,
+                quantity = COUNT
             });
 
             worklist_data.Add(order_list["1234"]);
@@ -211,6 +221,16 @@ namespace FinalProject
             foreach (OrderStep step in steps) { 
                 this.steps.Add(step);
             }
+            Part = "";
+            Op = "";
+            PONumber = -1;
+            Due = "";
+            PromiseDate = "";
+            PromiseDate = "";
+            description = "";
+            qtyComplete = 0;
+            part_no = -1;
+            quantity = 0;
         }
 
         public string RMS { get; set; }
@@ -221,8 +241,8 @@ namespace FinalProject
         public string PromiseDate { get; set; }
         public string description { get; set; }
         public int qtyComplete { get; set; }
-
-
+        public int part_no { get; set; }
+        public int quantity { get; set; }
 
         
         public List<OrderStep> steps = new List<OrderStep>();
