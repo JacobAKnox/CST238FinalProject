@@ -84,6 +84,9 @@
     <EmbeddedResource Include="E-Certs\E-Cert-Send.resx">
       <DependentUpon>E-Cert-Send.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmailWarning.resx">
+      <DependentUpon>EmailWarning.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
