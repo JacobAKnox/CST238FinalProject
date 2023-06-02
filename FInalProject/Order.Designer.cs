@@ -666,7 +666,7 @@ namespace FinalProject
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(186, 3);
+            this.pictureBox8.Location = new System.Drawing.Point(186, 1);
             this.pictureBox8.MaximumSize = new System.Drawing.Size(48, 48);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(48, 48);
@@ -695,7 +695,6 @@ namespace FinalProject
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.DimGray;
             this.button13.Enabled = false;
             this.button13.Location = new System.Drawing.Point(3, 49);
             this.button13.Name = "button13";
@@ -721,7 +720,7 @@ namespace FinalProject
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(186, 3);
+            this.pictureBox7.Location = new System.Drawing.Point(186, 0);
             this.pictureBox7.MaximumSize = new System.Drawing.Size(48, 48);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(48, 48);
@@ -741,7 +740,6 @@ namespace FinalProject
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.DimGray;
             this.button10.Enabled = false;
             this.button10.Location = new System.Drawing.Point(146, 49);
             this.button10.Name = "button10";
@@ -776,7 +774,7 @@ namespace FinalProject
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(186, 3);
+            this.pictureBox6.Location = new System.Drawing.Point(186, 0);
             this.pictureBox6.MaximumSize = new System.Drawing.Size(48, 48);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(48, 48);
@@ -796,7 +794,6 @@ namespace FinalProject
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.DimGray;
             this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(146, 49);
             this.button8.Name = "button8";
@@ -831,7 +828,7 @@ namespace FinalProject
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(186, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(186, 0);
             this.pictureBox4.MaximumSize = new System.Drawing.Size(48, 48);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(48, 48);
@@ -860,7 +857,6 @@ namespace FinalProject
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.DimGray;
             this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(3, 49);
             this.button5.Name = "button5";
@@ -886,7 +882,7 @@ namespace FinalProject
             // ecert_status
             // 
             this.ecert_status.Image = ((System.Drawing.Image)(resources.GetObject("ecert_status.Image")));
-            this.ecert_status.Location = new System.Drawing.Point(186, 3);
+            this.ecert_status.Location = new System.Drawing.Point(186, 0);
             this.ecert_status.MaximumSize = new System.Drawing.Size(48, 48);
             this.ecert_status.Name = "ecert_status";
             this.ecert_status.Size = new System.Drawing.Size(48, 48);
@@ -906,7 +902,6 @@ namespace FinalProject
             // 
             // viewcert
             // 
-            this.viewcert.BackColor = System.Drawing.Color.DimGray;
             this.viewcert.Enabled = false;
             this.viewcert.Location = new System.Drawing.Point(146, 49);
             this.viewcert.Name = "viewcert";

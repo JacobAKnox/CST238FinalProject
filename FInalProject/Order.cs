@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,6 @@ namespace FinalProject
         private Dictionary<string, Order> order_list = new Dictionary<string, Order>();
         
         public static Window orderWindowInstance;
-        public PictureBox ecert_stats;
 
         private string loaded_order = "";
 
@@ -78,7 +78,6 @@ namespace FinalProject
         {
             var formPopup = new E_Certs.E_Cert_Gen();
             formPopup.Show(this); // if you need non-modal window
-
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -157,6 +156,19 @@ namespace FinalProject
             RLabel_Order.Text = rLabel;
             RLabel_Docs.Text = rLabel;
 
+            // update document status icon
+            if (order.ecert_done) {
+                ecert_status.Image = Properties.Resources.e_cert_good;
+            }
+            else {
+                ecert_status.Image = Properties.Resources.e_cert_bad;
+            }
+            ecert_status.Refresh();
+
+            // update the enabled status of the buttons
+            makecert.Enabled = !order.ecert_done;
+            viewcert.Enabled = order.ecert_done;
+
             // move to order tab if on main
             if (MainTabs.SelectedTab == Main) {
                 MainTabs.SelectedTab = Order;
@@ -231,6 +243,7 @@ namespace FinalProject
             qtyComplete = 0;
             part_no = -1;
             quantity = 0;
+            ecert_done = false;
         }
 
         public string RMS { get; set; }
@@ -243,6 +256,8 @@ namespace FinalProject
         public int qtyComplete { get; set; }
         public int part_no { get; set; }
         public int quantity { get; set; }
+
+        public bool ecert_done { get; set; }
 
         
         public List<OrderStep> steps = new List<OrderStep>();
