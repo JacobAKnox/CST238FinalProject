@@ -102,7 +102,7 @@ namespace FinalProject
             }
             update_grid();
             loaded_order = order_id;
-            update_order_ui(order);
+            update_ui();
             return true;
         }
 
@@ -140,7 +140,9 @@ namespace FinalProject
             }
         }
 
-        private void update_order_ui(Order order) {
+        private void update_ui() {
+            var order = order_list[loaded_order];
+
             // update search boxes
             OrderSearchBox_Main.Text = loaded_order;
             OrderSearchBox_Order.Text = loaded_order;
