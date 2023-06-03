@@ -135,9 +135,14 @@ namespace FinalProject
         }
 
         private void tab_chnage_handler(object sender, EventArgs e) {
-            if (loaded_order == "") {
+            if (loaded_order == "" && MainTabs.SelectedTab != Main) {
                 MainTabs.SelectedTab = Main;
+                show_order_not_selected();
             }
+        }
+
+        private void show_order_not_selected() {
+            MessageBox.Show("No selcted order", "Warning", MessageBoxButtons.OK);
         }
 
         private void update_ui() {
