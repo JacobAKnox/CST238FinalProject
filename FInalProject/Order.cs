@@ -46,12 +46,6 @@ namespace FinalProject
             this.WorklistGrid.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WorklistGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
         }
-        
-        private void UpdateDataGridView2()
-        {
-            WorklistGrid.DataSource = null;
-            WorklistGrid.DataSource = worklist_data;
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,12 +76,7 @@ namespace FinalProject
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            UpdateDataGridView2();
-        }
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-            UpdateDataGridView2();
+            
         }
 
         private bool load_order(string order_id) {
@@ -230,6 +219,21 @@ namespace FinalProject
 
             worklist_data.Add(order_list["1234"]);
             worklist_data.Add(order_list["5678"]);
+        }
+
+        private void WorklistGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ActiveOrdersOnly_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

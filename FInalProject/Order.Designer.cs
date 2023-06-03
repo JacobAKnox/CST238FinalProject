@@ -39,15 +39,6 @@ namespace FinalProject
             this.MainTabs = new System.Windows.Forms.TabControl();
             this.Main = new System.Windows.Forms.TabPage();
             this.WorklistGrid = new System.Windows.Forms.DataGridView();
-            this.rMSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pONumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.promiseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.worklist_data = new System.Windows.Forms.BindingSource(this.components);
             this.panel11 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -61,15 +52,8 @@ namespace FinalProject
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Order = new System.Windows.Forms.TabPage();
             this.OrderGridView = new System.Windows.Forms.DataGridView();
-            this.stepnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.increment = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.completeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NotesEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.RLabel_Order = new System.Windows.Forms.Label();
@@ -113,16 +97,30 @@ namespace FinalProject
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.rMSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.partDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pONumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promiseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyCompleteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.worklist_data = new System.Windows.Forms.BindingSource(this.components);
+            this.stepnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.completeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.todoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectedOrder = new System.Windows.Forms.BindingSource(this.components);
             this.MainTabs.SuspendLayout();
             this.Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorklistGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Order.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Docs.SuspendLayout();
@@ -139,6 +137,8 @@ namespace FinalProject
             ((System.ComponentModel.ISupportInitialize)(this.ecert_status)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // MainTabs
@@ -154,7 +154,7 @@ namespace FinalProject
             this.MainTabs.Location = new System.Drawing.Point(12, 12);
             this.MainTabs.Name = "MainTabs";
             this.MainTabs.SelectedIndex = 0;
-            this.MainTabs.Size = new System.Drawing.Size(1132, 821);
+            this.MainTabs.Size = new System.Drawing.Size(1553, 821);
             this.MainTabs.TabIndex = 0;
             // 
             // Main
@@ -165,7 +165,7 @@ namespace FinalProject
             this.Main.Location = new System.Drawing.Point(4, 44);
             this.Main.Name = "Main";
             this.Main.Padding = new System.Windows.Forms.Padding(3);
-            this.Main.Size = new System.Drawing.Size(1124, 773);
+            this.Main.Size = new System.Drawing.Size(1545, 773);
             this.Main.TabIndex = 0;
             this.Main.Text = "Main";
             this.Main.UseVisualStyleBackColor = true;
@@ -193,71 +193,12 @@ namespace FinalProject
             this.WorklistGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WorklistGrid.Location = new System.Drawing.Point(3, 231);
             this.WorklistGrid.Name = "WorklistGrid";
+            this.WorklistGrid.ReadOnly = true;
             this.WorklistGrid.RowHeadersVisible = false;
             this.WorklistGrid.RowHeadersWidth = 51;
-            this.WorklistGrid.Size = new System.Drawing.Size(1118, 539);
+            this.WorklistGrid.Size = new System.Drawing.Size(1539, 539);
             this.WorklistGrid.TabIndex = 27;
-            // 
-            // rMSDataGridViewTextBoxColumn
-            // 
-            this.rMSDataGridViewTextBoxColumn.DataPropertyName = "RMS";
-            this.rMSDataGridViewTextBoxColumn.HeaderText = "RMS";
-            this.rMSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rMSDataGridViewTextBoxColumn.Name = "rMSDataGridViewTextBoxColumn";
-            // 
-            // partDataGridViewTextBoxColumn
-            // 
-            this.partDataGridViewTextBoxColumn.DataPropertyName = "Part";
-            this.partDataGridViewTextBoxColumn.HeaderText = "Part";
-            this.partDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.partDataGridViewTextBoxColumn.Name = "partDataGridViewTextBoxColumn";
-            // 
-            // opDataGridViewTextBoxColumn
-            // 
-            this.opDataGridViewTextBoxColumn.DataPropertyName = "Op";
-            this.opDataGridViewTextBoxColumn.HeaderText = "Op";
-            this.opDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.opDataGridViewTextBoxColumn.Name = "opDataGridViewTextBoxColumn";
-            // 
-            // pONumberDataGridViewTextBoxColumn
-            // 
-            this.pONumberDataGridViewTextBoxColumn.DataPropertyName = "PONumber";
-            this.pONumberDataGridViewTextBoxColumn.HeaderText = "PONumber";
-            this.pONumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pONumberDataGridViewTextBoxColumn.Name = "pONumberDataGridViewTextBoxColumn";
-            // 
-            // dueDataGridViewTextBoxColumn
-            // 
-            this.dueDataGridViewTextBoxColumn.DataPropertyName = "Due";
-            this.dueDataGridViewTextBoxColumn.HeaderText = "Due";
-            this.dueDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dueDataGridViewTextBoxColumn.Name = "dueDataGridViewTextBoxColumn";
-            // 
-            // promiseDateDataGridViewTextBoxColumn
-            // 
-            this.promiseDateDataGridViewTextBoxColumn.DataPropertyName = "PromiseDate";
-            this.promiseDateDataGridViewTextBoxColumn.HeaderText = "PromiseDate";
-            this.promiseDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.promiseDateDataGridViewTextBoxColumn.Name = "promiseDateDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // qtyCompleteDataGridViewTextBoxColumn
-            // 
-            this.qtyCompleteDataGridViewTextBoxColumn.DataPropertyName = "qtyComplete";
-            this.qtyCompleteDataGridViewTextBoxColumn.HeaderText = "qtyComplete";
-            this.qtyCompleteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.qtyCompleteDataGridViewTextBoxColumn.Name = "qtyCompleteDataGridViewTextBoxColumn";
-            // 
-            // worklist_data
-            // 
-            this.worklist_data.DataSource = typeof(FinalProject.Order);
-            this.worklist_data.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            this.WorklistGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WorklistGrid_CellContentClick);
             // 
             // panel11
             // 
@@ -271,14 +212,15 @@ namespace FinalProject
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(3, 188);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1118, 43);
+            this.panel11.Size = new System.Drawing.Size(1539, 43);
             this.panel11.TabIndex = 23;
+            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(583, 7);
+            this.button7.Location = new System.Drawing.Point(793, 7);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(83, 29);
             this.button7.TabIndex = 30;
@@ -288,7 +230,7 @@ namespace FinalProject
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(477, 7);
+            this.textBox2.Location = new System.Drawing.Point(687, 7);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 29);
             this.textBox2.TabIndex = 29;
@@ -297,22 +239,23 @@ namespace FinalProject
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1622, 8);
+            this.comboBox1.Location = new System.Drawing.Point(1832, 8);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(97, 32);
             this.comboBox1.TabIndex = 28;
             // 
             // ActiveOrdersOnly
             // 
-            this.ActiveOrdersOnly.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ActiveOrdersOnly.AutoSize = true;
+            this.ActiveOrdersOnly.Dock = System.Windows.Forms.DockStyle.Right;
             this.ActiveOrdersOnly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiveOrdersOnly.Location = new System.Drawing.Point(1168, 13);
+            this.ActiveOrdersOnly.Location = new System.Drawing.Point(1381, 0);
             this.ActiveOrdersOnly.Name = "ActiveOrdersOnly";
-            this.ActiveOrdersOnly.Size = new System.Drawing.Size(158, 24);
+            this.ActiveOrdersOnly.Size = new System.Drawing.Size(158, 43);
             this.ActiveOrdersOnly.TabIndex = 27;
             this.ActiveOrdersOnly.Text = "Active Orders Only";
             this.ActiveOrdersOnly.UseVisualStyleBackColor = true;
+            this.ActiveOrdersOnly.CheckedChanged += new System.EventHandler(this.ActiveOrdersOnly_CheckedChanged);
             // 
             // panel3
             // 
@@ -327,7 +270,7 @@ namespace FinalProject
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1118, 185);
+            this.panel3.Size = new System.Drawing.Size(1539, 185);
             this.panel3.TabIndex = 22;
             // 
             // label5
@@ -335,7 +278,7 @@ namespace FinalProject
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(656, 0);
+            this.label5.Location = new System.Drawing.Point(1077, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(462, 138);
             this.label5.TabIndex = 5;
@@ -346,7 +289,7 @@ namespace FinalProject
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(486, 8);
+            this.label6.Location = new System.Drawing.Point(696, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(163, 74);
             this.label6.TabIndex = 4;
@@ -358,7 +301,7 @@ namespace FinalProject
             this.OrderSeachGo_Main.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.OrderSeachGo_Main.BackColor = System.Drawing.Color.Transparent;
             this.OrderSeachGo_Main.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderSeachGo_Main.Location = new System.Drawing.Point(624, 122);
+            this.OrderSeachGo_Main.Location = new System.Drawing.Point(834, 122);
             this.OrderSeachGo_Main.Name = "OrderSeachGo_Main";
             this.OrderSeachGo_Main.Size = new System.Drawing.Size(67, 38);
             this.OrderSeachGo_Main.TabIndex = 3;
@@ -370,7 +313,7 @@ namespace FinalProject
             // 
             this.OrderSearchBox_Main.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.OrderSearchBox_Main.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.OrderSearchBox_Main.Location = new System.Drawing.Point(422, 122);
+            this.OrderSearchBox_Main.Location = new System.Drawing.Point(632, 122);
             this.OrderSearchBox_Main.Name = "OrderSearchBox_Main";
             this.OrderSearchBox_Main.Size = new System.Drawing.Size(196, 38);
             this.OrderSearchBox_Main.TabIndex = 2;
@@ -393,7 +336,7 @@ namespace FinalProject
             this.Order.Location = new System.Drawing.Point(4, 44);
             this.Order.Name = "Order";
             this.Order.Padding = new System.Windows.Forms.Padding(3);
-            this.Order.Size = new System.Drawing.Size(1124, 773);
+            this.Order.Size = new System.Drawing.Size(1545, 773);
             this.Order.TabIndex = 1;
             this.Order.Text = "Order";
             this.Order.UseVisualStyleBackColor = true;
@@ -436,31 +379,9 @@ namespace FinalProject
             this.OrderGridView.RowHeadersWidth = 51;
             this.OrderGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.OrderGridView.RowTemplate.Height = 36;
-            this.OrderGridView.Size = new System.Drawing.Size(1118, 582);
+            this.OrderGridView.Size = new System.Drawing.Size(1539, 582);
             this.OrderGridView.TabIndex = 3;
             this.OrderGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // stepnameDataGridViewTextBoxColumn
-            // 
-            this.stepnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.stepnameDataGridViewTextBoxColumn.DataPropertyName = "step_name";
-            this.stepnameDataGridViewTextBoxColumn.HeaderText = "Operation";
-            this.stepnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.stepnameDataGridViewTextBoxColumn.Name = "stepnameDataGridViewTextBoxColumn";
-            this.stepnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stepnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.stepnameDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // duedateDataGridViewTextBoxColumn
-            // 
-            this.duedateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.duedateDataGridViewTextBoxColumn.DataPropertyName = "due_date";
-            this.duedateDataGridViewTextBoxColumn.HeaderText = "Due";
-            this.duedateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
-            this.duedateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.duedateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.duedateDataGridViewTextBoxColumn.Width = 70;
             // 
             // increment
             // 
@@ -480,39 +401,6 @@ namespace FinalProject
             this.increment.UseColumnTextForButtonValue = true;
             this.increment.Width = 30;
             // 
-            // completeDataGridViewTextBoxColumn
-            // 
-            this.completeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.completeDataGridViewTextBoxColumn.DataPropertyName = "complete";
-            this.completeDataGridViewTextBoxColumn.HeaderText = "Qty. Complete";
-            this.completeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.completeDataGridViewTextBoxColumn.Name = "completeDataGridViewTextBoxColumn";
-            this.completeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.completeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.completeDataGridViewTextBoxColumn.Width = 154;
-            // 
-            // todoDataGridViewTextBoxColumn
-            // 
-            this.todoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.todoDataGridViewTextBoxColumn.DataPropertyName = "todo";
-            this.todoDataGridViewTextBoxColumn.HeaderText = "Qty. Todo";
-            this.todoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.todoDataGridViewTextBoxColumn.Name = "todoDataGridViewTextBoxColumn";
-            this.todoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.todoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.todoDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.totalDataGridViewTextBoxColumn.Width = 76;
-            // 
             // NotesEdit
             // 
             this.NotesEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -528,20 +416,6 @@ namespace FinalProject
             this.NotesEdit.UseColumnTextForButtonValue = true;
             this.NotesEdit.Width = 30;
             // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
-            this.notesDataGridViewTextBoxColumn.FillWeight = 193.988F;
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
-            this.notesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            this.notesDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // SelectedOrder
-            // 
-            this.SelectedOrder.DataSource = typeof(FinalProject.OrderStep);
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -556,7 +430,7 @@ namespace FinalProject
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1118, 185);
+            this.panel1.Size = new System.Drawing.Size(1539, 185);
             this.panel1.TabIndex = 2;
             // 
             // label12
@@ -574,7 +448,7 @@ namespace FinalProject
             this.RLabel_Order.AutoSize = true;
             this.RLabel_Order.Dock = System.Windows.Forms.DockStyle.Right;
             this.RLabel_Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLabel_Order.Location = new System.Drawing.Point(702, 0);
+            this.RLabel_Order.Location = new System.Drawing.Point(1123, 0);
             this.RLabel_Order.Name = "RLabel_Order";
             this.RLabel_Order.Size = new System.Drawing.Size(416, 138);
             this.RLabel_Order.TabIndex = 5;
@@ -585,7 +459,7 @@ namespace FinalProject
             this.CLabel_Order.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CLabel_Order.AutoSize = true;
             this.CLabel_Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CLabel_Order.Location = new System.Drawing.Point(390, 0);
+            this.CLabel_Order.Location = new System.Drawing.Point(600, 0);
             this.CLabel_Order.Name = "CLabel_Order";
             this.CLabel_Order.Size = new System.Drawing.Size(273, 126);
             this.CLabel_Order.TabIndex = 4;
@@ -628,7 +502,7 @@ namespace FinalProject
             this.Docs.Controls.Add(this.panel2);
             this.Docs.Location = new System.Drawing.Point(4, 44);
             this.Docs.Name = "Docs";
-            this.Docs.Size = new System.Drawing.Size(1124, 773);
+            this.Docs.Size = new System.Drawing.Size(1545, 773);
             this.Docs.TabIndex = 2;
             this.Docs.Text = "Documents";
             this.Docs.UseVisualStyleBackColor = true;
@@ -646,7 +520,7 @@ namespace FinalProject
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 185);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1124, 588);
+            this.panel9.Size = new System.Drawing.Size(1545, 588);
             this.panel9.TabIndex = 10;
             // 
             // panel8
@@ -658,7 +532,7 @@ namespace FinalProject
             this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.button12);
             this.panel8.Controls.Add(this.button13);
-            this.panel8.Location = new System.Drawing.Point(658, 388);
+            this.panel8.Location = new System.Drawing.Point(868, 388);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(280, 127);
             this.panel8.TabIndex = 9;
@@ -712,7 +586,7 @@ namespace FinalProject
             this.panel7.Controls.Add(this.label10);
             this.panel7.Controls.Add(this.button10);
             this.panel7.Controls.Add(this.button11);
-            this.panel7.Location = new System.Drawing.Point(658, 172);
+            this.panel7.Location = new System.Drawing.Point(868, 172);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(280, 127);
             this.panel7.TabIndex = 9;
@@ -766,7 +640,7 @@ namespace FinalProject
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.button8);
             this.panel6.Controls.Add(this.button9);
-            this.panel6.Location = new System.Drawing.Point(135, 391);
+            this.panel6.Location = new System.Drawing.Point(345, 391);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(280, 127);
             this.panel6.TabIndex = 8;
@@ -820,7 +694,7 @@ namespace FinalProject
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button5);
-            this.panel4.Location = new System.Drawing.Point(138, 172);
+            this.panel4.Location = new System.Drawing.Point(348, 172);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(280, 127);
             this.panel4.TabIndex = 8;
@@ -874,7 +748,7 @@ namespace FinalProject
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.viewcert);
             this.panel5.Controls.Add(this.makecert);
-            this.panel5.Location = new System.Drawing.Point(403, 3);
+            this.panel5.Location = new System.Drawing.Point(613, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(280, 127);
             this.panel5.TabIndex = 7;
@@ -934,7 +808,7 @@ namespace FinalProject
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1124, 185);
+            this.panel2.Size = new System.Drawing.Size(1545, 185);
             this.panel2.TabIndex = 9;
             // 
             // label13
@@ -952,7 +826,7 @@ namespace FinalProject
             this.RLabel_Docs.AutoSize = true;
             this.RLabel_Docs.Dock = System.Windows.Forms.DockStyle.Right;
             this.RLabel_Docs.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLabel_Docs.Location = new System.Drawing.Point(708, 0);
+            this.RLabel_Docs.Location = new System.Drawing.Point(1129, 0);
             this.RLabel_Docs.Name = "RLabel_Docs";
             this.RLabel_Docs.Size = new System.Drawing.Size(416, 138);
             this.RLabel_Docs.TabIndex = 5;
@@ -963,7 +837,7 @@ namespace FinalProject
             this.CLabel_Docs.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CLabel_Docs.AutoSize = true;
             this.CLabel_Docs.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CLabel_Docs.Location = new System.Drawing.Point(411, 0);
+            this.CLabel_Docs.Location = new System.Drawing.Point(621, 0);
             this.CLabel_Docs.Name = "CLabel_Docs";
             this.CLabel_Docs.Size = new System.Drawing.Size(273, 126);
             this.CLabel_Docs.TabIndex = 4;
@@ -1008,11 +882,148 @@ namespace FinalProject
             this.webBrowser1.Size = new System.Drawing.Size(774, 250);
             this.webBrowser1.TabIndex = 15;
             // 
+            // rMSDataGridViewTextBoxColumn
+            // 
+            this.rMSDataGridViewTextBoxColumn.DataPropertyName = "RMS";
+            this.rMSDataGridViewTextBoxColumn.HeaderText = "RMS";
+            this.rMSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.rMSDataGridViewTextBoxColumn.Name = "rMSDataGridViewTextBoxColumn";
+            this.rMSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // partDataGridViewTextBoxColumn
+            // 
+            this.partDataGridViewTextBoxColumn.DataPropertyName = "Part";
+            this.partDataGridViewTextBoxColumn.HeaderText = "Part";
+            this.partDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.partDataGridViewTextBoxColumn.Name = "partDataGridViewTextBoxColumn";
+            this.partDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // opDataGridViewTextBoxColumn
+            // 
+            this.opDataGridViewTextBoxColumn.DataPropertyName = "Op";
+            this.opDataGridViewTextBoxColumn.HeaderText = "Op";
+            this.opDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.opDataGridViewTextBoxColumn.Name = "opDataGridViewTextBoxColumn";
+            this.opDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pONumberDataGridViewTextBoxColumn
+            // 
+            this.pONumberDataGridViewTextBoxColumn.DataPropertyName = "PONumber";
+            this.pONumberDataGridViewTextBoxColumn.HeaderText = "PONumber";
+            this.pONumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pONumberDataGridViewTextBoxColumn.Name = "pONumberDataGridViewTextBoxColumn";
+            this.pONumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dueDataGridViewTextBoxColumn
+            // 
+            this.dueDataGridViewTextBoxColumn.DataPropertyName = "Due";
+            this.dueDataGridViewTextBoxColumn.HeaderText = "Due";
+            this.dueDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dueDataGridViewTextBoxColumn.Name = "dueDataGridViewTextBoxColumn";
+            this.dueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // promiseDateDataGridViewTextBoxColumn
+            // 
+            this.promiseDateDataGridViewTextBoxColumn.DataPropertyName = "PromiseDate";
+            this.promiseDateDataGridViewTextBoxColumn.HeaderText = "PromiseDate";
+            this.promiseDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.promiseDateDataGridViewTextBoxColumn.Name = "promiseDateDataGridViewTextBoxColumn";
+            this.promiseDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qtyCompleteDataGridViewTextBoxColumn
+            // 
+            this.qtyCompleteDataGridViewTextBoxColumn.DataPropertyName = "qtyComplete";
+            this.qtyCompleteDataGridViewTextBoxColumn.HeaderText = "qtyComplete";
+            this.qtyCompleteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.qtyCompleteDataGridViewTextBoxColumn.Name = "qtyCompleteDataGridViewTextBoxColumn";
+            this.qtyCompleteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // worklist_data
+            // 
+            this.worklist_data.DataSource = typeof(FinalProject.Order);
+            // 
+            // stepnameDataGridViewTextBoxColumn
+            // 
+            this.stepnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stepnameDataGridViewTextBoxColumn.DataPropertyName = "step_name";
+            this.stepnameDataGridViewTextBoxColumn.HeaderText = "Operation";
+            this.stepnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stepnameDataGridViewTextBoxColumn.Name = "stepnameDataGridViewTextBoxColumn";
+            this.stepnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stepnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.stepnameDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // duedateDataGridViewTextBoxColumn
+            // 
+            this.duedateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.duedateDataGridViewTextBoxColumn.DataPropertyName = "due_date";
+            this.duedateDataGridViewTextBoxColumn.HeaderText = "Due";
+            this.duedateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
+            this.duedateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.duedateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.duedateDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // completeDataGridViewTextBoxColumn
+            // 
+            this.completeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.completeDataGridViewTextBoxColumn.DataPropertyName = "complete";
+            this.completeDataGridViewTextBoxColumn.HeaderText = "Qty. Complete";
+            this.completeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.completeDataGridViewTextBoxColumn.Name = "completeDataGridViewTextBoxColumn";
+            this.completeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.completeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.completeDataGridViewTextBoxColumn.Width = 154;
+            // 
+            // todoDataGridViewTextBoxColumn
+            // 
+            this.todoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.todoDataGridViewTextBoxColumn.DataPropertyName = "todo";
+            this.todoDataGridViewTextBoxColumn.HeaderText = "Qty. Todo";
+            this.todoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.todoDataGridViewTextBoxColumn.Name = "todoDataGridViewTextBoxColumn";
+            this.todoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.todoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.todoDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.totalDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // notesDataGridViewTextBoxColumn
+            // 
+            this.notesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "notes";
+            this.notesDataGridViewTextBoxColumn.FillWeight = 193.988F;
+            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
+            this.notesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            this.notesDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SelectedOrder
+            // 
+            this.SelectedOrder.DataSource = typeof(FinalProject.OrderStep);
+            // 
             // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 845);
+            this.ClientSize = new System.Drawing.Size(1577, 845);
             this.Controls.Add(this.MainTabs);
             this.Name = "Window";
             this.Text = "Manufacturing App";
@@ -1020,7 +1031,6 @@ namespace FinalProject
             this.Main.ResumeLayout(false);
             this.Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorklistGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1029,7 +1039,6 @@ namespace FinalProject
             this.Order.ResumeLayout(false);
             this.Order.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1055,6 +1064,8 @@ namespace FinalProject
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worklist_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
