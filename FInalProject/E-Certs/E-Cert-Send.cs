@@ -1,4 +1,5 @@
 ﻿using FinalProject.Properties;
+using FInalProject.E_Certs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,12 @@ namespace FinalProject.E_Certs
     {
         // To close as things as you exit, you have to close the instance that opened this instance.
         private Form opening_popup_instance_to_close;
+        private E_Cert send_this_cert;
 
-        public E_Cert_Send(String send_as, Form instance_to_close)
+        public E_Cert_Send(String send_as, Form instance_to_close, E_Cert cert)
         {
             InitializeComponent();
+            send_this_cert = cert;
             ecert_send_send_as.Text = send_as;
             opening_popup_instance_to_close = instance_to_close;
 
@@ -49,6 +52,18 @@ namespace FinalProject.E_Certs
             //Window.orderWindowInstance.ecert_stats.Image = Image.FromFile(Filename);
 
             opening_popup_instance_to_close.Close();
+        }
+
+        private void E_Cert_Send_Load(object sender, EventArgs e)
+        {
+            foreach(string item in send_this_cert.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
+            {
+                ecert_send_customers.Items.Add(ecert_send_ecert);
+            }
+            foreach (string item in send_this_cert.get_email_address_list(E_Cert.Email_Address_List.CC))
+            {
+                ecert_send_cc.Items.Add(ecert_send_ecert);
+            }
         }
     }
 }

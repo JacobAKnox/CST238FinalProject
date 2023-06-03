@@ -58,6 +58,7 @@
     <Compile Include="E-Certs\E-Cert-Send.Designer.cs">
       <DependentUpon>E-Cert-Send.cs</DependentUpon>
     </Compile>
+    <Compile Include="E-Certs\E-Cert.cs" />
     <Compile Include="EmailWarning.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -116,6 +116,7 @@
             this.ecert_send_customers.Name = "ecert_send_customers";
             this.ecert_send_customers.Size = new System.Drawing.Size(392, 220);
             this.ecert_send_customers.TabIndex = 19;
+            this.ecert_send_customers.SelectedIndexChanged += new System.EventHandler(this.ecert_send_customers_SelectedIndexChanged);
             // 
             // ecert_send_cc
             // 
@@ -170,6 +171,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "E_Cert_Send";
             this.Text = "E_Cert_Send";
+            this.Load += new System.EventHandler(this.E_Cert_Send_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);

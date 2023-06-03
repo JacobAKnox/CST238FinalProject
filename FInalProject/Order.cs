@@ -18,7 +18,7 @@ namespace FinalProject
     {
         private Dictionary<string, Order> order_list = new Dictionary<string, Order>();
         
-        public static Window orderWindowInstance;
+        public static Window order_Window_Instance;
 
         private string loaded_order = "";
 
@@ -76,7 +76,7 @@ namespace FinalProject
 
         private void makecert_Click(object sender, EventArgs e)
         {
-            var formPopup = new E_Certs.E_Cert_Gen();
+            var formPopup = new E_Certs.E_Cert_Gen(order_Window_Instance, order_list[loaded_order].ecert_done);
             formPopup.Show(this); // if you need non-modal window
         }
 

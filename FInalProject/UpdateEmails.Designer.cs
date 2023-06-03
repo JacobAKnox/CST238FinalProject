@@ -269,7 +269,6 @@ namespace FinalProject
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update E-Cert Emails";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.UpdateEmails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
