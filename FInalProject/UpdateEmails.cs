@@ -52,15 +52,34 @@ namespace FinalProject
 
         private void UpdateEmails_Load(object sender, EventArgs e)
         {
-            foreach (String customer in Cert.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
+
+            var to_remove = checkedListBox1.Items.Count;
+            for (int i = 0; i < to_remove; i++)
+            {
+                checkedListBox1.Items.RemoveAt(0);
+            }
+
+            to_remove = checkedListBox2.Items.Count;
+            for (int i = 0; i < to_remove; i++)
+            {
+                checkedListBox2.Items.RemoveAt(0);
+            }
+
+            to_remove = checkedListBox3.Items.Count;
+            for (int i = 0; i < to_remove; i++)
+            {
+                checkedListBox3.Items.RemoveAt(0);
+            }
+
+            foreach (string customer in Cert.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
             {
                 checkedListBox1.Items.Add(customer);
             }
-            foreach (String customer in Cert.get_email_address_list(E_Cert.Email_Address_List.SEND_AS))
+            foreach (string customer in Cert.get_email_address_list(E_Cert.Email_Address_List.SEND_AS))
             {
                 checkedListBox2.Items.Add(customer);
             }
-            foreach (String customer in Cert.get_email_address_list(E_Cert.Email_Address_List.CC))
+            foreach (string customer in Cert.get_email_address_list(E_Cert.Email_Address_List.CC))
             {
                 checkedListBox3.Items.Add(customer);
             }
