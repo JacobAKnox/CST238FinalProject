@@ -223,7 +223,12 @@ namespace FinalProject
 
         private void WorklistGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
 
+            load_order(((Order)this.worklist_data.List[e.RowIndex]).RMS);
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)

@@ -198,7 +198,7 @@ namespace FinalProject
             this.WorklistGrid.RowHeadersWidth = 51;
             this.WorklistGrid.Size = new System.Drawing.Size(1539, 539);
             this.WorklistGrid.TabIndex = 27;
-            this.WorklistGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WorklistGrid_CellContentClick);
+            this.WorklistGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WorklistGrid_CellContentClick);
             // 
             // panel11
             // 
