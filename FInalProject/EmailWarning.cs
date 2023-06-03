@@ -21,7 +21,7 @@ namespace FinalProject
         {
             //allow remove from list of names 
             MessageBox.Show("Will delete emails!");
-            //removeEmail = true;
+            removeEmail = true;
             Close(); 
         }
 

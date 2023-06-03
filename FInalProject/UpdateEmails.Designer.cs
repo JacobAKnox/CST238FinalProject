@@ -44,7 +44,6 @@ namespace FinalProject
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -194,6 +193,7 @@ namespace FinalProject
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.ThreeDCheckBoxes = true;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox1.ClearSelected(); 
             // 
             // textBox2
             // 
@@ -265,21 +265,11 @@ namespace FinalProject
             this.textBox1.Text = "\r\nALL UPDATES \r\nARE PERMANENT\r\n";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "label3";
-            // 
             // UpdateEmails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1319, 722);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.panel1);
@@ -319,6 +309,5 @@ namespace FinalProject
             private Button button4;
             private TextBox textBox5;
         private Label label5;
-        private Label label3;
     }
 }

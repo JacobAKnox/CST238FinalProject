@@ -61,8 +61,8 @@ namespace FinalProject
         private void button3Click(object sender, EventArgs e)
         {
             string email = textBox3.Text;
-            //check that email contains an @ symbol & .com/isn't empty
-            if(email.Contains("@") && email.Contains(".com"))
+            //check that email contains an @ symbol / isn't empty
+            if(email.Contains("@"))
             { 
                 checkedListBox2.Items.Add(email);
                 textBox3.Clear();
@@ -89,20 +89,42 @@ namespace FinalProject
             
         }
 
+        //delete "To" email address 
+        //if all emails deleted replaces with "add email" message - would be better to do a warning box to not allow deletion
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int index = checkedListBox1.SelectedIndex;
+            int index = checkedListBox1.SelectedIndex;
             EmailWarning warning = new EmailWarning();
             warning.ShowDialog();
-            //if user clicks "yes" to delete then delete appropriate index TODO
-            if(warning.getRemoveEmail())
+            //if user clicks "yes" to delete then delete appropriate index
+            if(warning.removeEmail)
             {
-                //checkedListBox1.Items.RemoveAt(index);
-                warning.removeEmail = false;
+                if(checkedListBox1.Items.Count > 1)
+                {
+                    //checkedListBox1.ClearSelected();
+                    checkedListBox1.Items.RemoveAt(index);
+                    checkedListBox1.Refresh();
+                    //checkedListBox1.ClearSelected();
+                    warning.removeEmail = false;
+                }
+                else
+                {
+                    MessageBox.Show("You must have at least 1 email address. Please add an email address before deleting", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; 
+                    //checkedListBox1.ClearSelected();
+                    //checkedListBox1.Items.RemoveAt(index);
+                    //checkedListBox1.Items.Add("Please enter an email"); 
+                    //checkedListBox1.Refresh();
+                    //checkedListBox1.ClearSelected();
+                    //warning.removeEmail = false;
+                }
+
             }
-            //reloadUpdateEmail();
-            
+            checkedListBox1.ClearSelected();
+
         }
+
+        //delete "From" email address 
         private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             EmailWarning warning = new EmailWarning();
@@ -117,6 +139,7 @@ namespace FinalProject
 
         }
 
+        //delete "CC" email addresses 
         private void checkedListBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             EmailWarning warning = new EmailWarning();
