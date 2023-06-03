@@ -76,7 +76,7 @@ namespace FinalProject
 
         private void makecert_Click(object sender, EventArgs e)
         {
-            var formPopup = new E_Certs.E_Cert_Gen(order_Window_Instance, order_list[loaded_order].ecert_done);
+            var formPopup = new E_Certs.E_Cert_Gen(order_Window_Instance, order_list[loaded_order]);
             formPopup.Show(this); // if you need non-modal window
         }
 
@@ -226,7 +226,7 @@ namespace FinalProject
         }
     }
 
-    class Order { 
+    public class Order { 
         public Order(string RMS, params OrderStep[] steps)
         {
             this.RMS = RMS;
@@ -263,7 +263,7 @@ namespace FinalProject
         public List<OrderStep> steps = new List<OrderStep>();
     }
 
-    class OrderStep { 
+    public class OrderStep { 
         public OrderStep(string step_name, string due_date, int total, string notes)
         {
             this.step_name = step_name;

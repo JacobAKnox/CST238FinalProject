@@ -16,12 +16,12 @@ namespace FinalProject.E_Certs
     {
         // To close as things as you exit, you have to close the instance that opened this instance.
         private Form opening_popup_instance_to_close;
-        private E_Cert send_this_cert;
+        private E_Cert e_cert_to_send;
 
         public E_Cert_Send(String send_as, Form instance_to_close, E_Cert cert)
         {
             InitializeComponent();
-            send_this_cert = cert;
+            e_cert_to_send = cert;
             ecert_send_send_as.Text = send_as;
             opening_popup_instance_to_close = instance_to_close;
 
@@ -56,13 +56,14 @@ namespace FinalProject.E_Certs
 
         private void E_Cert_Send_Load(object sender, EventArgs e)
         {
-            foreach(string item in send_this_cert.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
+            foreach (String customer in e_cert_to_send.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
             {
-                ecert_send_customers.Items.Add(ecert_send_ecert);
+                ecert_send_customers.Items.Add(customer);
             }
-            foreach (string item in send_this_cert.get_email_address_list(E_Cert.Email_Address_List.CC))
+
+            foreach (String cc in e_cert_to_send.get_email_address_list(E_Cert.Email_Address_List.CC))
             {
-                ecert_send_cc.Items.Add(ecert_send_ecert);
+                ecert_send_cc.Items.Add(cc);
             }
         }
     }

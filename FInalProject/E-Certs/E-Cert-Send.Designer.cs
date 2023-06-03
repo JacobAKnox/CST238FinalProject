@@ -116,7 +116,6 @@
             this.ecert_send_customers.Name = "ecert_send_customers";
             this.ecert_send_customers.Size = new System.Drawing.Size(392, 220);
             this.ecert_send_customers.TabIndex = 19;
-            this.ecert_send_customers.SelectedIndexChanged += new System.EventHandler(this.ecert_send_customers_SelectedIndexChanged);
             // 
             // ecert_send_cc
             // 
