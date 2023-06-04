@@ -85,6 +85,7 @@ namespace FinalProject
             }
             SelectedOrder.Clear();
             Order order = order_list[order_id];
+
             foreach (OrderStep step in order.steps)
             {
                 SelectedOrder.Add(step);
@@ -237,6 +238,52 @@ namespace FinalProject
         }
 
         private void ActiveOrdersOnly_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string rmsNumber = textBox2.Text;
+
+            foreach (DataGridViewRow row in WorklistGrid.Rows)
+            {
+                if (row.Cells["rMSDataGridViewTextBoxColumn"].Value.ToString() == rmsNumber)
+                {
+                    row.Cells["rMSDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["partDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["opDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["pONumberDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["dueDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["promiseDateDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["descriptionDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["qtyCompleteDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    row.Cells["rMSDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["partDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["opDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["pONumberDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["dueDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["promiseDateDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["descriptionDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["qtyCompleteDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void OrderSearchBox_Main_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WorklistGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
