@@ -149,6 +149,5 @@ namespace FinalProject
 
             checkedListBox3.ClearSelected();
         }
-
-}
+    }
 }
