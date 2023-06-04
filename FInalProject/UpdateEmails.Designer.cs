@@ -43,6 +43,7 @@ namespace FinalProject
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +62,7 @@ namespace FinalProject
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.checkedListBox3);
@@ -113,7 +115,7 @@ namespace FinalProject
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox3.TabIndex = 21;
-            this.checkedListBox3.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox3.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox3_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -147,7 +149,7 @@ namespace FinalProject
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox2.TabIndex = 18;
-            this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox2_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -252,6 +254,15 @@ namespace FinalProject
             this.textBox1.Text = "\r\nALL UPDATES \r\nARE PERMANENT\r\n";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(646, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "label3";
+            // 
             // UpdateEmails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,5 +306,6 @@ namespace FinalProject
             private CheckedListBox checkedListBox1;
             private Button button4;
             private TextBox textBox5;
-        }
+        private Label label3;
+    }
 }
