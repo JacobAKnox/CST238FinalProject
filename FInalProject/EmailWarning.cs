@@ -26,6 +26,7 @@ namespace FinalProject
 
         public void cancelButtonClick(object sender, EventArgs e)
         {
+            removeEmail = false;
             this.Close();
         }
     }
