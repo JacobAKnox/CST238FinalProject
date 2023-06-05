@@ -24,13 +24,6 @@ namespace FinalProject.E_Certs
             e_cert_to_send = cert;
             ecert_send_send_as.Text = "Send as from db for" + send_as;
             opening_popup_instance_to_close = instance_to_close;
-
-            //for each customer in perm list 
-            // add to ecert_send_customers
-
-            // foreach cc in perm list
-            // add to ecert_send_cc
-
         }
 
         private void ecery_edit_permanant_group_Click(object sender, EventArgs e)
@@ -46,11 +39,6 @@ namespace FinalProject.E_Certs
 
         private void ecert_send_ecert_Click(object sender, EventArgs e)
         {
-            //change icon of sending icon based on stage
-
-            //const string Filename = "\\Resources\\Check Icon.bmp";
-            //Window.orderWindowInstance.ecert_stats.Image = Image.FromFile(Filename);
-
             opening_popup_instance_to_close.Close();
         }
 
