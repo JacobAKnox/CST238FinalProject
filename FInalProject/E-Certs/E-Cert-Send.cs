@@ -54,46 +54,89 @@ namespace FinalProject.E_Certs
             opening_popup_instance_to_close.Close();
         }
 
+
         private void E_Cert_Send_Load(object sender, EventArgs e)
         {
-            load_email_fields();
+            load_email_field(ecert_send_customers,E_Cert.Email_Address_List.CUSTOMER);
+            load_email_field(ecert_send_cc, E_Cert.Email_Address_List.CC);
         }
+
 
         private void ecert_send_customers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedIndex = ecert_send_customers.SelectedIndex;
-            if (selectedIndex != -1)
+            if (ecert_send_customers.Items.Count == 1)
             {
-                ecert_send_customers.Items.RemoveAt(selectedIndex);
+                ecert_send_warning_label.Text = "There must be at least 1 customer email to send to.";
+                ecert_send_warning_label.Visible = true;
+                return;
             }
+
+            bool succsesful_remove = remove_email_from_checked_list_box(ecert_send_customers, E_Cert.Email_Address_List.CUSTOMER);
             
-            //e_cert_to_send.remove_Selected_Emails_From_List(ecert_send_customers.Items[selectedIndex].ToString(), E_Cert.Email_Address_List.CUSTOMER);
-        }
-
-        private void load_email_fields() {
-            foreach (String customer in e_cert_to_send.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
+            if (succsesful_remove)
             {
-                ecert_send_customers.Items.Add(customer);
-            }
-
-            foreach (String cc in e_cert_to_send.get_email_address_list(E_Cert.Email_Address_List.CC))
-            {
-                ecert_send_cc.Items.Add(cc);
+                ecert_send_reset_customers_emails.Visible = true;
             }
         }
 
         private void ecert_send_cc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ecert_send_cc.Items.Count == 1)
+            bool succsesful_remove = remove_email_from_checked_list_box(ecert_send_customers, E_Cert.Email_Address_List.CUSTOMER);
+
+            if (succsesful_remove)
             {
-                pu
+                ecert_send_reset_cc_emails.Visible = true;
             }
             
-            int selectedIndex = ecert_send_cc.SelectedIndex;
+        }
+
+
+        private void ecert_send_reset_cc_emails_Click(object sender, EventArgs e)
+        {
+            reset_email_field(ecert_send_cc, E_Cert.Email_Address_List.CC);
+            ecert_send_reset_cc_emails.Visible = false;
+        }
+
+        private void ecert_send_reset_customers_emails_Click(object sender, EventArgs e)
+        {
+            reset_email_field(ecert_send_customers, E_Cert.Email_Address_List.CUSTOMER);
+            ecert_send_reset_customers_emails.Visible = false;
+            ecert_send_warning_label.Visible = false;
+        }
+
+
+        private void reset_email_field(CheckedListBox listBox, E_Cert.Email_Address_List address_List) {
+
+            int toremove = listBox.Items.Count;
+            for (int i = 0; i < toremove; i++)
+            {
+                listBox.Items.RemoveAt(0);
+            }
+            foreach (String email in e_cert_to_send.get_email_address_list(address_List))
+            {
+                listBox.Items.Add(email);
+            }
+        }
+
+        private void load_email_field(CheckedListBox listBox, E_Cert.Email_Address_List address_List)
+        {
+            foreach (String email in e_cert_to_send.get_email_address_list(address_List))
+            {
+                listBox.Items.Add(email);
+            }
+        }
+
+        private bool remove_email_from_checked_list_box(CheckedListBox listBox, E_Cert.Email_Address_List address_List)
+        {
+            int selectedIndex = listBox.SelectedIndex;
+
             if (selectedIndex != -1)
             {
-                ecert_send_cc.Items.RemoveAt(selectedIndex);
-            } 
+                listBox.Items.RemoveAt(selectedIndex);
+                return true;
+            }
+
+            return false;
         }
     }
 }
