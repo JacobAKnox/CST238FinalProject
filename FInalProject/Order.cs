@@ -39,18 +39,14 @@ namespace FinalProject
 
             initilize_fake_data();
 
+            UpdateWorklistGridVisibility();
+
             // I have to set the here becasue visual studio resets it in the desginer as a "feature"
             this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 
             this.WorklistGrid.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WorklistGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-        }
-        
-        private void UpdateDataGridView2()
-        {
-            WorklistGrid.DataSource = null;
-            WorklistGrid.DataSource = worklist_data;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,12 +78,7 @@ namespace FinalProject
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            UpdateDataGridView2();
-        }
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-            UpdateDataGridView2();
+            
         }
 
         private bool load_order(string order_id) {
@@ -96,13 +87,14 @@ namespace FinalProject
             }
             SelectedOrder.Clear();
             Order order = order_list[order_id];
+
             foreach (OrderStep step in order.steps)
             {
                 SelectedOrder.Add(step);
             }
             update_grid();
             loaded_order = order_id;
-            update_order_ui(order);
+            update_ui();
             return true;
         }
 
@@ -135,12 +127,19 @@ namespace FinalProject
         }
 
         private void tab_chnage_handler(object sender, EventArgs e) {
-            if (loaded_order == "") {
+            if (loaded_order == "" && MainTabs.SelectedTab != Main) {
                 MainTabs.SelectedTab = Main;
+                show_order_not_selected();
             }
         }
 
-        private void update_order_ui(Order order) {
+        private void show_order_not_selected() {
+            MessageBox.Show("No selcted order", "Warning", MessageBoxButtons.OK);
+        }
+
+        private void update_ui() {
+            var order = order_list[loaded_order];
+
             // update search boxes
             OrderSearchBox_Main.Text = loaded_order;
             OrderSearchBox_Order.Text = loaded_order;
@@ -199,7 +198,8 @@ namespace FinalProject
                 description = "Large Bolt",
                 qtyComplete = 10,
                 part_no = 2,
-                quantity = COUNT
+                quantity = COUNT,
+                active_order = true
             });
 
             order_list.Add("5678", new Order("5678",
@@ -218,12 +218,96 @@ namespace FinalProject
                 description = "Small Bolt",
                 qtyComplete = 10,
                 part_no = 1,
-                quantity = COUNT
-            });
+                quantity = COUNT,
+                active_order = false
+            }); 
 
             worklist_data.Add(order_list["1234"]);
             worklist_data.Add(order_list["5678"]);
         }
+
+        private void WorklistGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
+
+            load_order(((Order)this.worklist_data.List[e.RowIndex]).RMS);
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ActiveOrdersOnly_CheckedChanged(object sender, EventArgs e)
+        {
+            activeOrdersOnlyChecked = ActiveOrdersOnly.Checked;
+
+            // Call the function to update the visibility of rows in the WorklistGrid
+            UpdateWorklistGridVisibility();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string rmsNumber = textBox2.Text;
+
+            foreach (DataGridViewRow row in WorklistGrid.Rows)
+            {
+                if (row.Cells["rMSDataGridViewTextBoxColumn"].Value.ToString() == rmsNumber)
+                {
+                    row.Cells["rMSDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["partDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["opDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["pONumberDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["dueDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["promiseDateDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["descriptionDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                    row.Cells["qtyCompleteDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    row.Cells["rMSDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["partDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["opDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["pONumberDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["dueDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["promiseDateDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["descriptionDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                    row.Cells["qtyCompleteDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void OrderSearchBox_Main_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WorklistGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void UpdateWorklistGridVisibility()
+        {
+            foreach (DataGridViewRow row in WorklistGrid.Rows)
+            {
+                Order order = (Order)row.DataBoundItem;
+                bool isVisible = !activeOrdersOnlyChecked || order.active_order;
+
+                row.Visible = isVisible;
+            }
+        }
+
+        private bool activeOrdersOnlyChecked = false;
+
     }
 
     public class Order { 
@@ -258,6 +342,8 @@ namespace FinalProject
         public int quantity { get; set; }
 
         public bool ecert_done { get; set; }
+
+        public bool active_order { get; set; }
 
         
         public List<OrderStep> steps = new List<OrderStep>();

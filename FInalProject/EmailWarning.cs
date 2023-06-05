@@ -12,17 +12,19 @@ namespace FinalProject
 {
     public partial class EmailWarning : Form
     {
+        public bool removeEmail = false;
         public EmailWarning()
         {
             InitializeComponent();
         }
-        public void button1Click(object sender, EventArgs e)
+        public void yesButtonClick(object sender, EventArgs e)
         {
-            //remove from list of names 
-            MessageBox.Show("will allow email to be removed from list");
+            //allow remove from list of names 
+            removeEmail = true;
+            Close();
         }
 
-        public void button2Click(object sender, EventArgs e)
+        public void cancelButtonClick(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -28,6 +28,7 @@ namespace FinalProject
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
@@ -61,6 +62,7 @@ namespace FinalProject
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.checkedListBox3);
@@ -79,6 +81,16 @@ namespace FinalProject
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1309, 519);
             this.panel1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(492, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(309, 25);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Select box to delete email address";
             // 
             // button4
             // 
@@ -113,7 +125,7 @@ namespace FinalProject
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox3.TabIndex = 21;
-            this.checkedListBox3.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox3.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox3_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -147,7 +159,7 @@ namespace FinalProject
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox2.TabIndex = 18;
-            this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox2_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -295,5 +307,6 @@ namespace FinalProject
             private CheckedListBox checkedListBox1;
             private Button button4;
             private TextBox textBox5;
-        }
+        private Label label3;
+    }
 }
