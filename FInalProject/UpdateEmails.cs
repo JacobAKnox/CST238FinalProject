@@ -67,7 +67,7 @@ namespace FinalProject
         }
 
         //delete "To" email address 
-        //if all emails deleted replaces with "add email" message - would be better to do a warning box to not allow deletion
+        //if all emails deleted replaces with "add email" message
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = checkedListBox1.SelectedIndex;
@@ -106,8 +106,6 @@ namespace FinalProject
 
         private void refreshList(object sender, EventArgs e)
         {
-
-            //checkedListBox1.SetItemCheckState(checkedListBox1.SelectedIndex, CheckState.Unchecked);
             checkedListBox1.ClearSelected(); 
 
         }
@@ -177,7 +175,7 @@ namespace FinalProject
                         warning.removeEmail = false;
                         return;
                     }
-                    checkedListBox1.ClearSelected();
+                    checkedListBox3.ClearSelected();
                 }
             }));
         }
