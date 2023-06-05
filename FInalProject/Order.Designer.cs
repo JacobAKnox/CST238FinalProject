@@ -193,7 +193,6 @@ namespace FinalProject
             this.WorklistGrid.Size = new System.Drawing.Size(1539, 604);
             this.WorklistGrid.TabIndex = 27;
             this.WorklistGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WorklistGrid_CellContentClick);
-            this.WorklistGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WorklistGrid_CellContentClick_1);
             // 
             // panel3
             // 
@@ -257,7 +256,6 @@ namespace FinalProject
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 29);
             this.textBox2.TabIndex = 29;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // OrderSearchBox_Main
             // 
@@ -268,7 +266,6 @@ namespace FinalProject
             this.OrderSearchBox_Main.Size = new System.Drawing.Size(196, 38);
             this.OrderSearchBox_Main.TabIndex = 2;
             this.OrderSearchBox_Main.Text = "1234";
-            this.OrderSearchBox_Main.TextChanged += new System.EventHandler(this.OrderSearchBox_Main_TextChanged);
             // 
             // pictureBox1
             // 

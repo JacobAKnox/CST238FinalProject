@@ -78,11 +78,6 @@ namespace FinalProject
             formPopup.Show(this); // if you need non-modal window
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private bool load_order(string order_id) {
             if (!order_list.ContainsKey(order_id)) { 
                 return false;
@@ -238,11 +233,6 @@ namespace FinalProject
             load_order(((Order)this.worklist_data.List[e.RowIndex]).RMS);
         }
 
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void ActiveOrdersOnly_CheckedChanged(object sender, EventArgs e)
         {
             activeOrdersOnlyChecked = ActiveOrdersOnly.Checked;
@@ -280,21 +270,6 @@ namespace FinalProject
                     row.Cells["qtyCompleteDataGridViewTextBoxColumn"].Style.BackColor = Color.White;
                 }
             }
-        }
-
-        private void OrderSearchBox_Main_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WorklistGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-           
         }
 
         private void UpdateWorklistGridVisibility()
