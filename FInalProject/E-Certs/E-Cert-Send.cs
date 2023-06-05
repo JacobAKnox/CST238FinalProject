@@ -81,7 +81,7 @@ namespace FinalProject.E_Certs
 
         private void ecert_send_cc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool succsesful_remove = remove_email_from_checked_list_box(ecert_send_customers, E_Cert.Email_Address_List.CUSTOMER);
+            bool succsesful_remove = remove_email_from_checked_list_box(ecert_send_cc, E_Cert.Email_Address_List.CUSTOMER);
 
             if (succsesful_remove)
             {
