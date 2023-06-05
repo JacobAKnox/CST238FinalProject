@@ -66,6 +66,9 @@ namespace FinalProject.E_Certs
             this.ecert_po_selection.Name = "ecert_po_selection";
             this.ecert_po_selection.Size = new System.Drawing.Size(272, 124);
             this.ecert_po_selection.TabIndex = 2;
+            this.ecert_po_selection.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ecert_po_selection_ItemCheck);
+            this.ecert_po_selection.SelectedIndexChanged += new System.EventHandler(this.ecert_po_selection_SelectedIndexChanged);
+            this.ecert_po_selection.SelectedValueChanged += new System.EventHandler(this.ecert_po_selection_SelectedValueChanged);
             // 
             // ecert_send_as_input
             // 
@@ -76,6 +79,7 @@ namespace FinalProject.E_Certs
             this.ecert_send_as_input.Size = new System.Drawing.Size(228, 29);
             this.ecert_send_as_input.TabIndex = 3;
             this.ecert_send_as_input.Text = "name";
+            this.ecert_send_as_input.TextChanged += new System.EventHandler(this.ecert_send_as_input_TextChanged);
             // 
             // ecert_send_as_input_label
             // 
@@ -102,6 +106,11 @@ namespace FinalProject.E_Certs
             this.ecert_set_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.ecert_set_qty.Location = new System.Drawing.Point(93, 236);
             this.ecert_set_qty.Margin = new System.Windows.Forms.Padding(5);
+            this.ecert_set_qty.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ecert_set_qty.Name = "ecert_set_qty";
             this.ecert_set_qty.Size = new System.Drawing.Size(82, 29);
             this.ecert_set_qty.TabIndex = 7;
@@ -114,6 +123,7 @@ namespace FinalProject.E_Certs
             // ecert_generate_ecert
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.ecert_generate_ecert, 2);
+            this.ecert_generate_ecert.Enabled = false;
             this.ecert_generate_ecert.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.ecert_generate_ecert.Location = new System.Drawing.Point(5, 313);
             this.ecert_generate_ecert.Margin = new System.Windows.Forms.Padding(5);

@@ -22,7 +22,7 @@ namespace FinalProject.E_Certs
         {
             InitializeComponent();
             e_cert_to_send = cert;
-            ecert_send_send_as.Text = send_as;
+            ecert_send_send_as.Text = "Send as from db for" + send_as;
             opening_popup_instance_to_close = instance_to_close;
 
             //for each customer in perm list 

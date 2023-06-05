@@ -46,5 +46,34 @@ namespace FinalProject.E_Certs
             var formPopup = new E_Certs.E_Cert_Send(ecert_send_as_input.Text, e_Cert_Gen_Instance, generated_ecert);
             formPopup.Show(this);
         }
+
+        private void can_generate_ecert() { 
+            if (ecert_po_selection.CheckedItems.Count == 0 || ecert_send_as_input.Text == "")
+            {
+                ecert_generate_ecert.Enabled = false;
+                return;
+            }
+            ecert_generate_ecert.Enabled = true;
+        }
+
+        private void ecert_po_selection_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            can_generate_ecert();
+        }
+
+        private void ecert_send_as_input_TextChanged(object sender, EventArgs e)
+        {
+            can_generate_ecert();
+        }
+
+        private void ecert_po_selection_SelectedValueChanged(object sender, EventArgs e)
+        {
+            can_generate_ecert();
+        }
+
+        private void ecert_po_selection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            can_generate_ecert();
+        }
     }
 }
