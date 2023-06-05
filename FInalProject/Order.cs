@@ -18,7 +18,7 @@ namespace FinalProject
     {
         private Dictionary<string, Order> order_list = new Dictionary<string, Order>();
         
-        public static Window orderWindowInstance;
+        public static Window order_Window_Instance;
 
         private string loaded_order = "";
 
@@ -47,6 +47,8 @@ namespace FinalProject
 
             this.WorklistGrid.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WorklistGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+
+            order_Window_Instance = this;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -72,7 +74,7 @@ namespace FinalProject
 
         private void makecert_Click(object sender, EventArgs e)
         {
-            var formPopup = new E_Certs.E_Cert_Gen();
+            var formPopup = new E_Certs.E_Cert_Gen(order_Window_Instance, order_list[loaded_order]);
             formPopup.Show(this); // if you need non-modal window
         }
 
@@ -137,7 +139,7 @@ namespace FinalProject
             MessageBox.Show("No selcted order", "Warning", MessageBoxButtons.OK);
         }
 
-        private void update_ui() {
+        public void update_ui() {
             var order = order_list[loaded_order];
 
             // update search boxes
@@ -310,7 +312,7 @@ namespace FinalProject
 
     }
 
-    class Order { 
+    public class Order { 
         public Order(string RMS, params OrderStep[] steps)
         {
             this.RMS = RMS;
@@ -349,7 +351,7 @@ namespace FinalProject
         public List<OrderStep> steps = new List<OrderStep>();
     }
 
-    class OrderStep { 
+    public class OrderStep { 
         public OrderStep(string step_name, string due_date, int total, string notes)
         {
             this.step_name = step_name;

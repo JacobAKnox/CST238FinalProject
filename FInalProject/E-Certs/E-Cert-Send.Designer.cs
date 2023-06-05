@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.ecert_send_reset_cc_emails = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.ecert_send_ecert = new System.Windows.Forms.Button();
             this.ecery_edit_permanant_group = new System.Windows.Forms.Button();
             this.ecert_confirm_send_data = new System.Windows.Forms.CheckBox();
+            this.ecert_send_warning_label = new System.Windows.Forms.Label();
+            this.ecert_send_reset_customers_emails = new System.Windows.Forms.Button();
             this.ecert_group_edit_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -46,9 +49,10 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.08972F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.00816F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.98044F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.02608F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.99348F));
+            this.tableLayoutPanel2.Controls.Add(this.ecert_send_reset_cc_emails, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
@@ -58,17 +62,32 @@
             this.tableLayoutPanel2.Controls.Add(this.ecert_send_ecert, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.ecery_edit_permanant_group, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.ecert_confirm_send_data, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.ecert_send_warning_label, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.ecert_send_reset_customers_emails, 2, 1);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.29897F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.70103F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(613, 604);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.47942F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.53282F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.98776F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(613, 634);
             this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // ecert_send_reset_cc_emails
+            // 
+            this.ecert_send_reset_cc_emails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ecert_send_reset_cc_emails.Location = new System.Drawing.Point(529, 377);
+            this.ecert_send_reset_cc_emails.Name = "ecert_send_reset_cc_emails";
+            this.ecert_send_reset_cc_emails.Size = new System.Drawing.Size(75, 33);
+            this.ecert_send_reset_cc_emails.TabIndex = 24;
+            this.ecert_send_reset_cc_emails.Text = "Reset";
+            this.ecert_send_reset_cc_emails.UseVisualStyleBackColor = true;
+            this.ecert_send_reset_cc_emails.Visible = false;
+            this.ecert_send_reset_cc_emails.Click += new System.EventHandler(this.ecert_send_reset_cc_emails_Click);
             // 
             // label7
             // 
@@ -116,6 +135,7 @@
             this.ecert_send_customers.Name = "ecert_send_customers";
             this.ecert_send_customers.Size = new System.Drawing.Size(392, 220);
             this.ecert_send_customers.TabIndex = 19;
+            this.ecert_send_customers.SelectedIndexChanged += new System.EventHandler(this.ecert_send_customers_SelectedIndexChanged);
             // 
             // ecert_send_cc
             // 
@@ -124,6 +144,7 @@
             this.ecert_send_cc.Name = "ecert_send_cc";
             this.ecert_send_cc.Size = new System.Drawing.Size(392, 220);
             this.ecert_send_cc.TabIndex = 20;
+            this.ecert_send_cc.SelectedIndexChanged += new System.EventHandler(this.ecert_send_cc_SelectedIndexChanged);
             // 
             // ecert_send_ecert
             // 
@@ -132,7 +153,7 @@
             this.ecert_send_ecert.Location = new System.Drawing.Point(127, 554);
             this.ecert_send_ecert.Margin = new System.Windows.Forms.Padding(5);
             this.ecert_send_ecert.Name = "ecert_send_ecert";
-            this.ecert_send_ecert.Size = new System.Drawing.Size(388, 34);
+            this.ecert_send_ecert.Size = new System.Drawing.Size(388, 32);
             this.ecert_send_ecert.TabIndex = 8;
             this.ecert_send_ecert.Text = "Send E-Cert";
             this.ecert_send_ecert.UseVisualStyleBackColor = true;
@@ -162,14 +183,39 @@
             this.ecert_confirm_send_data.UseVisualStyleBackColor = true;
             this.ecert_confirm_send_data.CheckedChanged += new System.EventHandler(this.ecert_confirm_send_data_CheckedChanged);
             // 
+            // ecert_send_warning_label
+            // 
+            this.ecert_send_warning_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ecert_send_warning_label.AutoSize = true;
+            this.ecert_send_warning_label.ForeColor = System.Drawing.Color.Red;
+            this.ecert_send_warning_label.Location = new System.Drawing.Point(205, 600);
+            this.ecert_send_warning_label.Name = "ecert_send_warning_label";
+            this.ecert_send_warning_label.Size = new System.Drawing.Size(231, 24);
+            this.ecert_send_warning_label.TabIndex = 22;
+            this.ecert_send_warning_label.Text = "ecert_send_warning_label";
+            this.ecert_send_warning_label.Visible = false;
+            // 
+            // ecert_send_reset_customers_emails
+            // 
+            this.ecert_send_reset_customers_emails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ecert_send_reset_customers_emails.Location = new System.Drawing.Point(529, 151);
+            this.ecert_send_reset_customers_emails.Name = "ecert_send_reset_customers_emails";
+            this.ecert_send_reset_customers_emails.Size = new System.Drawing.Size(75, 33);
+            this.ecert_send_reset_customers_emails.TabIndex = 23;
+            this.ecert_send_reset_customers_emails.Text = "Reset";
+            this.ecert_send_reset_customers_emails.UseVisualStyleBackColor = true;
+            this.ecert_send_reset_customers_emails.Visible = false;
+            this.ecert_send_reset_customers_emails.Click += new System.EventHandler(this.ecert_send_reset_customers_emails_Click);
+            // 
             // E_Cert_Send
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 621);
+            this.ClientSize = new System.Drawing.Size(666, 645);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "E_Cert_Send";
             this.Text = "E_Cert_Send";
+            this.Load += new System.EventHandler(this.E_Cert_Send_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -189,5 +235,8 @@
         private System.Windows.Forms.CheckedListBox ecert_send_cc;
         private System.Windows.Forms.ToolTip ecert_group_edit_tooltip;
         private System.Windows.Forms.CheckBox ecert_confirm_send_data;
+        private System.Windows.Forms.Label ecert_send_warning_label;
+        private System.Windows.Forms.Button ecert_send_reset_customers_emails;
+        private System.Windows.Forms.Button ecert_send_reset_cc_emails;
     }
 }

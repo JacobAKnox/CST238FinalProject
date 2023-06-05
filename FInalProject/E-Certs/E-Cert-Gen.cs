@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FInalProject.E_Certs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,26 +19,31 @@ namespace FinalProject.E_Certs
 
         // Used to call back to the instance of the window to close it from the new window
         public static E_Cert_Gen e_Cert_Gen_Instance;
+        public Window documents_window_instance;
+        public Order order;
+        public E_Cert generated_ecert;
 
-        public E_Cert_Gen()
+        public E_Cert_Gen(Window instance_of_order_window, Order ecert_status_icon)
         {
+            documents_window_instance = instance_of_order_window;
+            order = ecert_status_icon;
+
             InitializeComponent();
             e_Cert_Gen_Instance = this;
         }
 
         private void generate_ecert()
         {
-
-            //This is where the E-Cert generation would go 
-            Console.WriteLine("Ecert Generated");
-
+            generated_ecert = new E_Cert();
+            order.ecert_done = true;
+            documents_window_instance.update_ui();
         }
 
         private void b_gen_cert_Click(object sender, EventArgs e)
         {
             generate_ecert();
             
-            var formPopup = new E_Certs.E_Cert_Send(ecert_send_as_input.Text, e_Cert_Gen_Instance);
+            var formPopup = new E_Certs.E_Cert_Send(ecert_send_as_input.Text, e_Cert_Gen_Instance, generated_ecert);
             formPopup.Show(this);
         }
     }
