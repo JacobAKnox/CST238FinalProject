@@ -62,8 +62,8 @@
             this.tableLayoutPanel2.Controls.Add(this.ecert_send_ecert, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.ecery_edit_permanant_group, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.ecert_confirm_send_data, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.ecert_send_warning_label, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.ecert_send_reset_customers_emails, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ecert_send_warning_label, 0, 5);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -74,6 +74,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.47942F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.53282F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.98776F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(613, 634);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
@@ -187,8 +189,9 @@
             // 
             this.ecert_send_warning_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ecert_send_warning_label.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.ecert_send_warning_label, 3);
             this.ecert_send_warning_label.ForeColor = System.Drawing.Color.Red;
-            this.ecert_send_warning_label.Location = new System.Drawing.Point(205, 600);
+            this.ecert_send_warning_label.Location = new System.Drawing.Point(191, 600);
             this.ecert_send_warning_label.Name = "ecert_send_warning_label";
             this.ecert_send_warning_label.Size = new System.Drawing.Size(231, 24);
             this.ecert_send_warning_label.TabIndex = 22;
