@@ -36,6 +36,7 @@ namespace FinalProject.E_Certs
         {
             generated_ecert = new E_Cert();
             order.ecert_done = true;
+            documents_window_instance.update_ui();
         }
 
         private void b_gen_cert_Click(object sender, EventArgs e)

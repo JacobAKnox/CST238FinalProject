@@ -56,6 +56,21 @@ namespace FinalProject.E_Certs
 
         private void E_Cert_Send_Load(object sender, EventArgs e)
         {
+            load_email_fields();
+        }
+
+        private void ecert_send_customers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = ecert_send_customers.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                ecert_send_customers.Items.RemoveAt(selectedIndex);
+            }
+            
+            //e_cert_to_send.remove_Selected_Emails_From_List(ecert_send_customers.Items[selectedIndex].ToString(), E_Cert.Email_Address_List.CUSTOMER);
+        }
+
+        private void load_email_fields() {
             foreach (String customer in e_cert_to_send.get_email_address_list(E_Cert.Email_Address_List.CUSTOMER))
             {
                 ecert_send_customers.Items.Add(customer);
@@ -65,6 +80,20 @@ namespace FinalProject.E_Certs
             {
                 ecert_send_cc.Items.Add(cc);
             }
+        }
+
+        private void ecert_send_cc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ecert_send_cc.Items.Count == 1)
+            {
+                pu
+            }
+            
+            int selectedIndex = ecert_send_cc.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                ecert_send_cc.Items.RemoveAt(selectedIndex);
+            } 
         }
     }
 }

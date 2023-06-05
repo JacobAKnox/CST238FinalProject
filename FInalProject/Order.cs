@@ -47,6 +47,8 @@ namespace FinalProject
 
             this.WorklistGrid.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.WorklistGrid.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+
+            order_Window_Instance = this;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -137,7 +139,7 @@ namespace FinalProject
             MessageBox.Show("No selcted order", "Warning", MessageBoxButtons.OK);
         }
 
-        private void update_ui() {
+        public void update_ui() {
             var order = order_list[loaded_order];
 
             // update search boxes
