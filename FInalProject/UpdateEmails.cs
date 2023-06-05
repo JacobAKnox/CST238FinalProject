@@ -73,26 +73,42 @@ namespace FinalProject
             int index = checkedListBox1.SelectedIndex;
             EmailWarning warning = new EmailWarning();
             warning.ShowDialog();
-            //if user clicks "yes" to delete then delete appropriate index
-            if (warning.removeEmail)
-            {
-                //if more than 1 email in list, allow delete
-                if (checkedListBox1.Items.Count > 1)
-                {
-                    checkedListBox1.Items.RemoveAt(index);
-                    checkedListBox1.Refresh();
-                    //checkedListBox1.ClearSelected();
-                    warning.removeEmail = false;
-                }
-                //otherwise pop-up warning message until additional email is added
-                else
-                {
-                    MessageBox.Show("You must have at least 1 email address. Please add an email address before deleting", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
 
-            }
-            checkedListBox1.ClearSelected();
+            checkedListBox1.BeginInvoke(new Action(() =>
+                {
+
+                    //if user clicks "yes" to delete then delete appropriate index
+                    if (warning.removeEmail)
+                    {
+                        //if more than 1 email in list, allow delete
+                        if (checkedListBox1.Items.Count > 1)
+                        {
+                            checkedListBox1.ClearSelected();
+                            checkedListBox1.Items.RemoveAt(index);
+                            checkedListBox1.Refresh();
+                            warning.removeEmail = false;
+                            return;
+
+                        }
+                        //otherwise pop-up warning message until additional email is added
+                        else
+                        {
+                            checkedListBox1.Items.Clear();
+                            MessageBox.Show("You must have at least 1 email address. Please add an email address before closing window", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            warning.removeEmail = false;
+                            return;
+                        }
+                    }
+
+
+                }));
+        }
+
+        private void refreshList(object sender, EventArgs e)
+        {
+
+            //checkedListBox1.SetItemCheckState(checkedListBox1.SelectedIndex, CheckState.Unchecked);
+            checkedListBox1.ClearSelected(); 
 
         }
 
@@ -105,23 +121,31 @@ namespace FinalProject
             EmailWarning warning = new EmailWarning();
             warning.ShowDialog();
 
-            //if more than 1 email in list, allow delete
-            if (checkedListBox2.Items.Count > 1)
+            checkedListBox2.BeginInvoke(new Action(() =>
             {
-                checkedListBox2.Items.RemoveAt(index);
-                checkedListBox2.Refresh();
-                //checkedListBox1.ClearSelected();
-                warning.removeEmail = false;
-            }
-            //otherwise pop-up warning message until additional email is added
-            else
-            {
-                MessageBox.Show("You must have at least 1 email address. Please add an email address before deleting", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                //if user clicks "yes" to delete then delete appropriate index
+                if (warning.removeEmail)
+                {
+                    //if more than 1 email in list, allow delete
+                    if (checkedListBox2.Items.Count > 1)
+                    {
+                        checkedListBox2.Items.RemoveAt(index);
+                        checkedListBox2.Refresh();
+                        warning.removeEmail = false;
 
-            checkedListBox2.ClearSelected();
+                    }
+                    //otherwise pop-up warning message until additional email is added
+                    else
+                    {
+                        checkedListBox2.Items.Clear();
+                        MessageBox.Show("You must have at least 1 email address. Please add an email address before closing window", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        warning.removeEmail = false;
+                        return;
+                    }
+                    checkedListBox2.ClearSelected();
 
+                }
+            }));
         }
 
         //delete "CC" email addresses 
@@ -132,22 +156,30 @@ namespace FinalProject
             EmailWarning warning = new EmailWarning();
             warning.ShowDialog();
 
-            //if more than 1 email in list, allow delete
-            if (checkedListBox3.Items.Count > 1)
+            checkedListBox3.BeginInvoke(new Action(() =>
             {
-                checkedListBox3.Items.RemoveAt(index);
-                checkedListBox3.Refresh(); 
-                //checkedListBox1.ClearSelected();
-                warning.removeEmail = false;
-            }
-            //otherwise pop-up warning message until additional email is added
-            else
-            {
-                MessageBox.Show("You must have at least 1 email address. Please add an email address before deleting", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                //if user clicks "yes" to delete then delete appropriate index
+                if (warning.removeEmail)
+                {
+                    //if more than 1 email in list, allow delete
+                    if (checkedListBox3.Items.Count > 1)
+                    {
+                        checkedListBox3.Items.RemoveAt(index);
+                        checkedListBox3.Refresh();
+                        warning.removeEmail = false;
 
-            checkedListBox3.ClearSelected();
+                    }
+                    //otherwise pop-up warning message until additional email is added
+                    else
+                    {
+                        checkedListBox3.Items.Clear();
+                        MessageBox.Show("You must have at least 1 email address. Please add an email address before closing window", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        warning.removeEmail = false;
+                        return;
+                    }
+                    checkedListBox1.ClearSelected();
+                }
+            }));
         }
     }
 }

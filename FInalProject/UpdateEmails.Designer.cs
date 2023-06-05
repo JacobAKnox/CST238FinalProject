@@ -126,6 +126,8 @@ namespace FinalProject
             this.checkedListBox3.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox3.TabIndex = 21;
             this.checkedListBox3.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox3_SelectedIndexChanged);
+            //this.checkedListBox3.Refresh();
+            //this.checkedListBox3.ClearSelected();
             // 
             // button3
             // 
@@ -160,6 +162,8 @@ namespace FinalProject
             this.checkedListBox2.Size = new System.Drawing.Size(212, 55);
             this.checkedListBox2.TabIndex = 18;
             this.checkedListBox2.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox2_SelectedIndexChanged);
+            this.checkedListBox2.Refresh();
+            this.checkedListBox2.ClearSelected();
             // 
             // label2
             // 
@@ -193,6 +197,7 @@ namespace FinalProject
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.ThreeDCheckBoxes = true;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_SelectedIndexChanged);
+
             // 
             // textBox2
             // 
