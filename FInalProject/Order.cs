@@ -39,6 +39,8 @@ namespace FinalProject
 
             initilize_fake_data();
 
+            UpdateWorklistGridVisibility();
+
             // I have to set the here becasue visual studio resets it in the desginer as a "feature"
             this.OrderGridView.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OrderGridView.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -196,7 +198,8 @@ namespace FinalProject
                 description = "Large Bolt",
                 qtyComplete = 10,
                 part_no = 2,
-                quantity = COUNT
+                quantity = COUNT,
+                active_order = true
             });
 
             order_list.Add("5678", new Order("5678",
@@ -215,8 +218,9 @@ namespace FinalProject
                 description = "Small Bolt",
                 qtyComplete = 10,
                 part_no = 1,
-                quantity = COUNT
-            });
+                quantity = COUNT,
+                active_order = false
+            }); 
 
             worklist_data.Add(order_list["1234"]);
             worklist_data.Add(order_list["5678"]);
@@ -239,7 +243,10 @@ namespace FinalProject
 
         private void ActiveOrdersOnly_CheckedChanged(object sender, EventArgs e)
         {
+            activeOrdersOnlyChecked = ActiveOrdersOnly.Checked;
 
+            // Call the function to update the visibility of rows in the WorklistGrid
+            UpdateWorklistGridVisibility();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -285,8 +292,22 @@ namespace FinalProject
 
         private void WorklistGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
+
+        private void UpdateWorklistGridVisibility()
+        {
+            foreach (DataGridViewRow row in WorklistGrid.Rows)
+            {
+                Order order = (Order)row.DataBoundItem;
+                bool isVisible = !activeOrdersOnlyChecked || order.active_order;
+
+                row.Visible = isVisible;
+            }
+        }
+
+        private bool activeOrdersOnlyChecked = false;
+
     }
 
     class Order { 
@@ -321,6 +342,8 @@ namespace FinalProject
         public int quantity { get; set; }
 
         public bool ecert_done { get; set; }
+
+        public bool active_order { get; set; }
 
         
         public List<OrderStep> steps = new List<OrderStep>();
